@@ -1,0 +1,27 @@
+.main-image {
+  width: 800px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.main-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.main-text {
+  margin-bottom: 3em;
+}
+
+.error-image {
+  width: 600px;
+  height: 800px;
+  margin: 0 auto;
+}
+
+.error-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
