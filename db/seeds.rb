@@ -54,6 +54,7 @@ groups = Group.create! [
     description: "Social Psychology class students from UiO. We study together for the exams, usually at the library.",
     city: "Oslo",
     limitation: "5",
+
     image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
     tag_list: "UiO, psychology, master student"
   },
@@ -137,6 +138,9 @@ groups = Group.create! [
 ]
 
 puts "Creating meetings"
+
+user_group1 = UserGroup.create( user_groups.user = users.first, user_groups.group = groups.first)
+user_group2 = UserGroup.create( user_groups.user = users.first, user_groups.group = groups[6])
 
 meetings = Meeting.create! [
   {
