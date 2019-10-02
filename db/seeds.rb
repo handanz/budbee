@@ -6,6 +6,33 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts 'Cleaning database...'
+
+User.destroy_all
+Group.destroy_all
+Meeting.destroy_all
+
+p "Destroying Users, Groups, and Meetings.."
+
+puts "Creating users"
+
+users = User.create! [
+  { email: "hello@text.co",
+    password: "morning"
+  },
+  { email: "honey@text.co",
+    password: "1234567"
+  },
+  { email: "bob@gmail.com",
+    password: "helloo"
+  },
+  { email: "rose@text.co",
+    password: "abcdefg"
+  },
+]
+
+puts "Creating groups"
+
 groups = Group.create! [
   { name: "Psychology UiO",
     description: "Social Psychology class students from UiO. We study together for the exams, usually at the library.",
@@ -80,30 +107,8 @@ groups = Group.create! [
     image: "https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
   },
 ]
-puts 'Cleaning database...'
 
-User.destroy_all
-Meeting.destroy_all
-
-p "Destroying Users and Meetings.."
-
-users = User.create! [
-  {
-    email: "hello@text.co",
-    password: "morning"
-  },
-  {
-    email: "honey@text.co",
-    password: "1234567"
-  },
-  { email: "bob@gmail.com",
-    password: "helloo"
-  },
-  {
-    email: "rose@text.co",
-    password: "abcdefg"
-  },
-]
+puts "Creating meetings"
 
 meetings = Meeting.create! [
   {
@@ -144,4 +149,3 @@ meetings = Meeting.create! [
 ]
 
 p "Users and Meetings created"
-
