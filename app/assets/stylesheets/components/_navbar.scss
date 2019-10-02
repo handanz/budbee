@@ -1,12 +1,29 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  height: 50px;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-light .navbar-nav .budbee-nav-link {
+  color: red;
 }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 30px;
+// }
+
+.logo-link {
+  font-family: 'Mansalva', cursive;
+  font-size: 22px;
+  color: black;
+  margin-top: 10px;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: none;
+}}
+
