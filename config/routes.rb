@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/404", to: 'errors#not_found'
   get "/500", to: 'errors#internal_error'
+
+  resources :groups, only: [ :show, :index ] do
+    resources :meetings, only: [ :show ]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
