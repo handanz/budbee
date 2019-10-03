@@ -140,7 +140,6 @@ groups = Group.create! [
   },
 ]
 
-puts "Creating meetings"
 user_group = UserGroup.new
 user_group.user = User.first
 user_group.group = Group.first
@@ -156,10 +155,11 @@ second_group.save
 # user_group2 = UserGroup.new(confirmed: true, user_id: User.first.id, group_id: Group.all[6].id)
 # user_group2.save
 
+puts "Creating meetings"
 meetings = Meeting.create! [
   {
-    title: "Meetup for students",
-    description: "This meeting is for students who wnats to know more about this group",
+    title: "UiO psychology Monday meetup",
+    description: "This meeting is for students who wnats to know more about this group. We are meeting on Monday to discuss about what we are aiming at for this semester. ps. We are some ambitious students, and wish for a good grade for this semester.",
     time: "14/10/2019 17:00",
     address: "chr.krohgs gate 1, Oslo",
     group_id: "1",
@@ -193,5 +193,10 @@ meetings = Meeting.create! [
     group_id: "11",
   }
 ]
+
+user_meeting = UserMeeting.new
+user_meeting.user = User.first
+user_meeting.meeting = Meeting.first
+user_meeting.save
 
 p "Users and Meetings created"
