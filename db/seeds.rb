@@ -159,7 +159,7 @@ puts "Creating meetings"
 meetings = Meeting.create! [
   {
     title: "UiO psychology Monday meetup",
-    description: "This meeting is for students who wnats to know more about this group. We are meeting on Monday to discuss about what we are aiming at for this semester. ps. We are some ambitious students, and wish for a good grade for this semester.",
+    description: "This meeting is for students who wants to know more about this group. We are meeting on Monday to discuss about what we are aiming at for this semester. ps. We are some ambitious students, and wish for a good grade for this semester.",
     time: "14/10/2019 17:00",
     address: "chr.krohgs gate 1, Oslo",
     group_id: "1",
