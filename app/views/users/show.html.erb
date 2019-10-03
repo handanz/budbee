@@ -5,6 +5,8 @@
 <h1>user's image</h1>
 <%= image_tag (@user.image) %>
 
+<!-- xxxxxxxxxxxxxxxxxxx -->
+
 <h1>user's group</h1>
 <% @groups.each do |group| %>
   <%= image_tag (group.image) %>
@@ -14,34 +16,35 @@
   <%= group.description %>
 <% end %>
 
-<h1>user's meeting</h1>
 <% @meetings.each do |meeting| %>
-  <%= meeting.title %>
-  <%= meeting.time %>
-  <%= meeting.description %>
-<% end %>
-
-<div class="flex-profile-container">
-  <div class="flex-group-container">
-    <!-- namn -->
-    <% x groups %>
-    <div>
-      <!-- group card -->
-    </div>
-    <div>
-      <!-- group card -->
-    </div>
-    <div>
-      <!-- group card -->
-    </div>
-    <div>
-      <!-- group card -->
-    </div>
-  </div>
   <div class="flex-upcoming-container">
     <h2>Upcoming meetup</h2>
     <!-- meeting card -->
+      <%= meeting.title %>
+      <%= meeting.time %>
+      <%= meeting.description %>
+    <% end %>
   </div>
 </div>
+
+
+<!--
+<div class="flex-profile-container">
+  <div class="flex-group-container">
+    <!-- namn -->
+
+    <div>
+      <!-- group card -->
+    </div>
+    <div>
+      <!-- group card -->
+    </div>
+    <div>
+      <!-- group card -->
+    </div>
+    <div>
+      <!-- group card -->
+    </div>
+  </div> -->
 
 
