@@ -2,10 +2,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "Budbee", "#", class: "logo-link" %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
   <div class="d-flex">
     <div class="search">
       <%= form_tag groups_path, method: :get do %>
@@ -25,22 +21,33 @@
         <!-- </div> -->
       <%# end %>
     </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <!-- PATH -->
+        <li class="nav-item">
         <%= link_to "Find a group", "#", class: "nav-link budbee-nav-link" %>
-        <!-- <a class="nav-link" href="http://localhost:3000/">Home</a> -->
-        <!-- PATH -->
-        <%= link_to "Login", "#", class: "nav-link budbee-nav-link" %>
-        <!-- PATH -->
-        <%= link_to "Register", "#", class: "nav-link budbee-nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to "Login", new_user_session_path, class: "nav-link budbee-nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to "Register", new_user_registration_path, class: "nav-link budbee-nav-link" %>
+        </li>
         <li class="nav-item dropdown">
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-          </div>
+        <% unless current_user.nil? %>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Profile", profile_path(@user), class: "dropdown-item" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+        <% end %>
         </li>
       </ul>
     </div>
+
   </div>
 </div>
