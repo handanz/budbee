@@ -5,6 +5,12 @@
 <h1>user's image</h1>
 <%= image_tag (@user.image) %>
 
+
+<% @interests.each do |interest| %>
+<%= interest %> |
+<% end %>
+
+
 <h1>user's group</h1>
 <% @groups.each do |group| %>
   <%= image_tag (group.image) %>
@@ -20,3 +26,4 @@
   <%= meeting.time %>
   <%= meeting.description %>
 <% end %>
+

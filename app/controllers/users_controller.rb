@@ -7,5 +7,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @groups = @user.groups
     @meetings = @user.meetings
+    @interests = @user.tag_list
   end
 end
