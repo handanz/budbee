@@ -1,4 +1,21 @@
-<h2><%= @group.name %></h2>
-<p><%= @group.description %></p>
-<p><%= @group.city %></p>
-<%= image_tag(@group.image) %>
+<div class="container ml-100">
+  <div class="row">
+    <div class="col-8">
+      <div class="card-body">
+        <div class="card-show">
+          <img src="<%= @group.image %>" class="card-img-top" alt="@group.name">
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="my-4 flex-start">
+        <h2 class="card-name">
+        <%= @group.name %>
+        </h2>
+        <p><%= @group.description %></p>
+        <h4>City: <%= @group.city %></h4>
+        <br>
+      </div>
+    </div>
+  </div>
+<div>

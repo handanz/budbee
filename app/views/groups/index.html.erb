@@ -1,8 +1,16 @@
 <h1>All Groups</h1>
 <% @groups.each do |group| %>
-  <h2><%= group.name %></h2>
-  <p><%= group.description %></p>
-  <p><%= group.city %></p>
-  <%= image_tag group.image %>
 
+<div class="container">
+<div class="card-product">
+  <%= image_tag group.image %>
+  <div class="card-product-infos">
+    <h2><%= group.name %></h2>
+    <p><%= group.description %></p>
+    <p><%= group.city %></p>
+  </div>
+</div>
+<br>
+</div>
 <% end %>
+
