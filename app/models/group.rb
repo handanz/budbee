@@ -1,4 +1,7 @@
 class Group < ApplicationRecord
+  has_many :user_groups
+  has_many :users, through: :user_groups
+
   include PgSearch::Model
   has_many :meetings
   has_many :users, through: :user_groups

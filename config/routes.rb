@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get "/profile/:id", to: 'users#show'
   get "/404", to: 'errors#not_found'
   get "/500", to: 'errors#internal_error'
 

@@ -1,0 +1,15 @@
+
+<h1>username</h1>
+<%= @user.username %>
+
+<h1>user's image</h1>
+<%= image_tag (@user.image) %>
+
+<h1>user's group</h1>
+<% @groups.each do |group| %>
+<%= image_tag (group.image) %>
+<%= group.name %>
+<%= group.city %>
+<br>
+<%= group.description %>
+<% end %>

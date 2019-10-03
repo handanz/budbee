@@ -8,9 +8,11 @@
 
 puts 'Cleaning database...'
 
+UserGroup.destroy_all
+UserMeeting.destroy_all
 User.destroy_all
-Group.destroy_all
 Meeting.destroy_all
+Group.destroy_all
 
 p "Destroying Users, Groups, and Meetings.."
 
@@ -22,6 +24,7 @@ users = User.create! [
     username: "line23",
     first_name: "Line",
     last_name: "Pederson",
+    image: "https://images.unsplash.com/photo-1541943181603-d8fe267a5dcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=312&q=80",
     tag_list: "UiO, psychology, paiting, python, cooking, social psychology"
   },
   { email: "honey@text.co",
@@ -54,6 +57,7 @@ groups = Group.create! [
     description: "Social Psychology class students from UiO. We study together for the exams, usually at the library.",
     city: "Oslo",
     limitation: "5",
+
     image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
     tag_list: "UiO, psychology, master student"
   },
@@ -137,6 +141,20 @@ groups = Group.create! [
 ]
 
 puts "Creating meetings"
+user_group = UserGroup.new
+user_group.user = User.first
+user_group.group = Group.first
+user_group.save
+
+second_group = UserGroup.new
+second_group.user = User.first
+second_group.group = Group.all[6]
+second_group.save
+
+# user_group1 = UserGroup.new(confirmed: true, user_id: User.first.id, group_id: Group.first.id)
+# user_group1.save
+# user_group2 = UserGroup.new(confirmed: true, user_id: User.first.id, group_id: Group.all[6].id)
+# user_group2.save
 
 meetings = Meeting.create! [
   {
