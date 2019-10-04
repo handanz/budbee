@@ -1,0 +1,29 @@
+.flex-profile-container {
+  flex-direction: row;
+  display: flex; /* or inline-flex */
+  // flex-grow: 0; /* default 0 */
+}
+
+// .item {
+//   order: <integer>; /* default is 0 */
+// }
+
+.flex-group-container {
+  flex-direction: row;
+  display: flex; /* or inline-flex */
+  // flex-grow: 0; /* default 0 */
+}
+
+.flex-upcoming-container {
+  flex-direction: row;
+  display: flex; /* or inline-flex */
+  // flex-grow: 0; /* default 0 */
+}
+
+.profile-groups {
+  width: 62%;
+}
+
+.profile-meetups {
+  width: 36%;
+}
