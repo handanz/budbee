@@ -1,38 +1,49 @@
-
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "Budbee", "#", class: "logo-link" %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <%= link_to groups_path do %>
+   <%= image_tag "logo.png", class: "avatar" %>
+  <% end %>
+
 
   <div class="d-flex">
     <div class="search">
-      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-        <div class="search-form-control form-group">
-          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-          <button name="button" type="submit" class="btn btn-flat">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
+      <%= form_tag groups_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "find a group",
+        class: "form-control string required"
+      %>
       <% end %>
     </div>
+    <%= submit_tag "Search", class: "button" %>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <!-- PATH -->
-        <%= link_to "Find a group", "#", class: "nav-link budbee-nav-link" %>
-        <!-- <a class="nav-link" href="http://localhost:3000/">Home</a> -->
-        <!-- PATH -->
-        <%= link_to "Login", "#", class: "nav-link budbee-nav-link" %>
-        <!-- PATH -->
-        <%= link_to "Register", "#", class: "nav-link budbee-nav-link" %>
+        <li class="nav-item">
+        <%= link_to "All groups", groups_path, class: "nav-link budbee-nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to "Login", new_user_session_path, class: "nav-link budbee-nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to "Register", new_user_registration_path, class: "nav-link budbee-nav-link" %>
+        </li>
         <li class="nav-item dropdown">
+        <% unless current_user.nil? %>
+          <%= image_tag "profile", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <%= link_to "Profile", profile_path(current_user), class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
+        <% end %>
         </li>
       </ul>
     </div>
+
   </div>
 </div>

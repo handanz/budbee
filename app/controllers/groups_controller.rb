@@ -1,6 +1,14 @@
 class GroupsController < ApplicationController
   def index
-    @groups = Group.all
+    if params[:query].present?
+      sql_query = " \
+        groups.name @@ :query \
+        OR groups.description @@ :query \
+      "
+      @groups = Group.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @groups = Group.all
+    end
   end
 
   def show

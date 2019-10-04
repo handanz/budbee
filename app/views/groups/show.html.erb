@@ -15,8 +15,17 @@
         <%= @group.name %>
         </h2>
         <p><%= @group.description %></p>
-        <h4>City: <%= @group.city %></h4>
+        <h4>City</h4>
+        <%= @group.city %>
         <br>
+        <br>
+        <% @group.users.each do |user| %>
+        <h4>Members</h4>
+        <%= link_to profile_path(current_user) do %>
+        <%= user.first_name %>
+        <% end %>| Jonas | Lilly
+        <% end %>
+      <br>
       </div>
     </div>
   </div>
