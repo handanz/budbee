@@ -19,10 +19,11 @@
         <br>
         <% @group.users.each do |user| %>
         <h4>Members</h4>
-        <%= user.first_name %> | Jonas | Lilly
+        <%= link_to profile_path(current_user) do %>
+        <%= user.first_name %>
+        <% end %>| Jonas | Lilly
         <% end %>
-
-        <br>
+      <br>
       </div>
     </div>
   </div>
