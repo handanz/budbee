@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
+    @groups = Group.all
   end
 end
