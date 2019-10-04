@@ -1,7 +1,7 @@
 class Group < ApplicationRecord
   include PgSearch::Model
-  has_many :meetings
-  has_many :user_groups
+  has_many :meetings, dependent: :destroy
+  has_many :user_groups, dependent: :destroy
   has_many :users, through: :user_groups
   acts_as_taggable_on :tags
 
