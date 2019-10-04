@@ -12,8 +12,17 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :username, uniqueness: true
 
-  # use this instead of email_changed? for Rails = 5.1.x
+  before_save :set_default_image, if: :no_image?
+  # use this instead of email_changed? for Rails = 5.1.x def will_save_change_to_email?
   def will_save_change_to_email?
     false
+  end
+
+  def set_default_image
+    self.image = "https://miro.medium.com/max/720/1*W35QUSvGpcLuxPo3SRTH4w.png"
+  end
+
+  def no_image?
+    image.nil?
   end
 end
