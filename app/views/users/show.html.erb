@@ -1,29 +1,43 @@
+<!-- <h1>user's image</h1> -->
+<%#= image_tag (@user.image) %>
 
-<h1>username</h1>
-<%= @user.username %>
+<%# @interests.each do |interest| %>
+<%#= interest %>
+<%# end %>
 
-<h1>user's image</h1>
-<%= image_tag (@image) %>
-
-
-<% @interests.each do |interest| %>
-<%= interest %> |
-<% end %>
-
-
-<h1>user's group</h1>
-<% @groups.each do |group| %>
-  <%= image_tag (group.image) %>
-  <%= group.name %>
-  <%= group.city %>
-  <br>
-  <%= group.description %>
-<% end %>
-
-<h1>user's meeting</h1>
-<% @meetings.each do |meeting| %>
-  <%= meeting.title %>
-  <%= meeting.time %>
-  <%= meeting.description %>
-<% end %>
-
+<div class="flex-profile-container">
+  <div class="profile-groups">
+    <h3><%= @user.first_name %>'s groups</h3>
+    <div class="flex-group-container">
+      <% @groups.each do |group| %>
+      <div class="org-card">
+        <%= image_tag (group.image) %>
+        <div class="org-card-infos">
+          <div class="info-left">
+            <p><strong><%= group.name %></strong></p>
+            <p><strong><%= group.city %></strong></p>
+          </div>
+          <div class="info-right flex-grow-1 w-100">
+            <p><%= group.description %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="profile-meetups">
+    <h3>Upcoming meetup</h3>
+    <div class="flex-upcoming-container">
+      <% if @meeting %>
+      <div class="upcoming-meetup">
+        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Upcoming Meetup">
+        <div class="upc-card">
+          <%= @meeting.title %>
+          <%= @meeting.time %>
+          <%= @meeting.description %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

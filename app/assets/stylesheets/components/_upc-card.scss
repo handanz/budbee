@@ -1,0 +1,45 @@
+.upc-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 100%;
+  margin: 15px;
+  padding: 15px;
+}
+
+.upcoming-meetup > img {
+  height: 300px;
+  width: 100%;
+  margin: 15px;
+  object-fit: cover;
+ }
+
+.upc-card h3 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.upc-card p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.upc-card .upc-card-infos {
+  // padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  // margin: 16px;
+}
+
+
+// .org-card-infos .card-trip-user {
+//   position: absolute;
+//   right: 16px;
+//   top: -20px;
+//   width: 40px;
+// }
+

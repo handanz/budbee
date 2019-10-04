@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @image = @user.image
     @groups = @user.groups
     @meetings = @user.meetings
+    @meeting = @meetings.first
     @interests = @user.tag_list
   end
 end

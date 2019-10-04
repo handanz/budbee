@@ -1,0 +1,45 @@
+.org-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 50%;
+  margin: 15px,
+}
+
+.org-card > img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+ }
+
+.org-card h3 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.org-card p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.org-card .org-card-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+
+  .info-left {
+    width: 35%;
+    margin-right: 8px;
+  }
+}
+
+// .org-card-infos .card-trip-user {
+//   position: absolute;
+//   right: 16px;
+//   top: -20px;
+//   width: 40px;
+// }
