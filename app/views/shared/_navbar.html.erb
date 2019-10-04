@@ -1,5 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "Budbee", groups_path, class: "logo-link" %>
+
+  <%= link_to groups_path do %>
+   <%= image_tag "logo.png", class: "avatar" %>
+  <% end %>
+
 
   <div class="d-flex">
     <div class="search">
