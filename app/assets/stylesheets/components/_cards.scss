@@ -3,6 +3,7 @@
 }
 
 .card-product {
+  margin-bottom: 18px;
   overflow: hidden;
   height: 120px;
   background: white;
@@ -38,5 +39,15 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+.group-cards-list {
+  .card-product-infos {
+    h2 {
+      font-size: 22px;
+    }
 
+    p {
+      font-size: 16px;
+    }
+  }
 
+}
