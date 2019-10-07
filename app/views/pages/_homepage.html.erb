@@ -5,7 +5,19 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)">
   <div>
     <h1><strong> Brighter Friends, Brighter Future.</strong></h1>
-    <div class="text-center">
+    <div class="text-center d-flex justify-content-center">
+      <div class="search search-banner">
+        <%= form_tag groups_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a group...",
+          class: "form-control string required"
+        %>
+        <% end %>
+      <%= submit_tag "Search", class: " search-button-banner" %>
+      </div>
+
     </div>
   </div>
 </div>

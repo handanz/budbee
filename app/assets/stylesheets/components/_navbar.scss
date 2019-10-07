@@ -1,11 +1,14 @@
 .navbar-lewagon {
   justify-content: space-between;
-  align-items: baseline;
+  align-items: normal;
   background: white;
   height: 70px;
   border-bottom: 1px solid $light-gray;
+  font-weight: bold;
 }
-
+.nav-item {
+  margin: 0 12px;
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -35,7 +38,9 @@
   background-color: $red;
   border: none;
   color: white;
-  height: 50px
+  height: 50px;
+  padding: 0 18px;
+  font-weight: bold;
 }
 
 .vertical-divider {
