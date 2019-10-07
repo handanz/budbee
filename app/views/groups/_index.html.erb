@@ -3,16 +3,16 @@
 <% @groups.each do |group| %>
 
 <div class="container">
+  <%= link_to group_path(group) do %>
   <div class="card-product">
   <%= image_tag group.image %>
     <div class="card-product-infos">
-      <%= link_to group_path(group) do %>
       <h2><%= group.name %></h2>
-      <% end %>
       <p><%= group.description %></p>
       <p><%= group.city %></p>
     </div>
   </div>
+  <% end %>
   <br>
 </div>
 <% end %>
