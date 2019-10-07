@@ -1,3 +1,7 @@
+.group-card-link:hover {
+  text-decoration: none;
+}
+
 .card-product {
   overflow: hidden;
   height: 120px;
@@ -33,10 +37,6 @@
 
 .card-product .card-product-infos {
   padding: 16px;
-
-  &:hover {
-  text-decoration: none;
-  }
 }
 
 

@@ -3,7 +3,7 @@
 <% @groups.each do |group| %>
 
 <div class="container">
-  <%= link_to group_path(group) do %>
+  <%= link_to group_path(group), class: "group-card-link" do %>
   <div class="card-product">
   <%= image_tag group.image %>
     <div class="card-product-infos">
