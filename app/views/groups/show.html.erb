@@ -33,7 +33,8 @@
   <div class="dates">
     <div class="form-inputs">
       <div class="form-row">
-        <%= f.input :meeting, as: :string, input_html: { class: "datepicker" }, label: 'Meet-ups', collection: @group.meetings, wrapper_html: { class: "inline_field_wrapper" }  %>
+        <div id="test" data-dates="<%= @dates %>"></div>
+        <%= f.input :meeting, as: :string, input_html: { class: "datepicker" }, label: 'Meet-ups', collection: @group.meetings, wrapper_html: { class: "inline_field_wrapper" } %>
         <%#= f.input :time, as: :string, input_html: { class: "datepicker" }, label: "Dates from", placeholder: "yy/mm/dd", wrapper_html: { class: "inline_field_wrapper" } %>
       </div>
     </div>

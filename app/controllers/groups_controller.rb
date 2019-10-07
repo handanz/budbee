@@ -14,5 +14,7 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @user_meeting = UserMeeting.new
+    @dates = @group.meetings.map { |meeting| meeting.time }
+    raise
   end
 end
