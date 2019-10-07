@@ -1,7 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
+  align-items: baseline;
   background: white;
-  height: 50px;
+  height: 70px;
+  border-bottom: 1px solid $light-gray;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,3 +14,38 @@
   color: $red;
 }
 
+.form-control {
+  border: none;
+  border-bottom: 1px dashed $light-gray;
+  padding: 10px;
+  &:focus {
+    box-shadow: none;
+    border-color: inherit;
+    border-width: 3px;
+  }
+}
+.search {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.search-button-navbar {
+  margin: 0 24px;
+  background-color: $red;
+  border: none;
+  color: white;
+  height: 50px
+}
+
+.vertical-divider {
+  border-left: 1px solid $red;
+  margin: 0 36px;
+  height: 54px;
+  align-self: center;
+}
+
+.logo {
+  height: 50px;
+  align-self: normal;
+}

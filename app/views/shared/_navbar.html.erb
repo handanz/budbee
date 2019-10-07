@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
   <%= link_to groups_path do %>
-   <%= image_tag "logo.png", class: "avatar" %>
+   <%= image_tag "logo.png", class: "logo" %>
   <% end %>
 
 
@@ -16,7 +16,8 @@
       %>
       <% end %>
     </div>
-    <%= submit_tag "Search", class: "button" %>
+    <%= submit_tag "Search", class: " search-button-navbar" %>
+    <div class="vertical-divider"></div>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
