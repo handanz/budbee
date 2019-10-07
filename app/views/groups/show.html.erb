@@ -21,7 +21,7 @@
         <br>
         <% @group.users.each do |user| %>
         <h4>Members</h4>
-        <%= link_to profile_path(current_user) do %>
+        <%= link_to profile_path(user) do %>
         <%= user.first_name %>
         <% end %>| Jonas | Lilly
         <% end %>
