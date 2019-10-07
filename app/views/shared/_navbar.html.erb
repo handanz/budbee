@@ -28,21 +28,23 @@
         <li class="nav-item">
         <%= link_to "All groups", groups_path, class: "nav-link budbee-nav-link" %>
         </li>
-        <li class="nav-item">
-        <%= link_to "Login", new_user_session_path, class: "nav-link budbee-nav-link" %>
-        </li>
-        <li class="nav-item">
-        <%= link_to "Register", new_user_registration_path, class: "nav-link budbee-nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-        <% unless current_user.nil? %>
-          <%= image_tag "profile", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Profile", profile_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
+        <% if current_user.nil? %>
+
+          <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link budbee-nav-link" %>
+          </li>
+          <li class="nav-item">
+          <%= link_to "Register", new_user_registration_path, class: "nav-link budbee-nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item dropdown">
+            <%= image_tag "profile", class: "avatar avatar-navbar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "Profile", profile_path(current_user), class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
         <% end %>
-        </li>
       </ul>
     </div>
 
