@@ -7,8 +7,10 @@
         <%= image_tag group.image %>
         <div class="card-product-infos">
           <h2><%= group.name %></h2>
+          <div>
+          <%= group.city %>
+          </div>
           <p><%= group.description %></p>
-          <p><%= group.city %></p>
         </div>
       </div>
     <% end %>
