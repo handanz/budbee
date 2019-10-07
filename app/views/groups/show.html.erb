@@ -1,5 +1,3 @@
-
-
 <div class="container">
   <div class="row">
     <div class="col-8">
@@ -23,10 +21,27 @@
         <h4>Members</h4>
         <%= link_to profile_path(user) do %>
         <%= user.first_name %>
-        <% end %>| Jonas | Lilly
+        <% end %>|
         <% end %>
       <br>
       </div>
     </div>
   </div>
 <div>
+
+<%= simple_form_for(@user_meeting) do |f| %>
+  <div class="dates">
+    <div class="form-inputs">
+      <div class="form-row">
+        <%= f.input :meeting, as: :string, input_html: { class: "datepicker" }, label: 'Meet-ups', collection: @group.meetings, wrapper_html: { class: "inline_field_wrapper" }  %>
+        <%#= f.input :time, as: :string, input_html: { class: "datepicker" }, label: "Dates from", placeholder: "yy/mm/dd", wrapper_html: { class: "inline_field_wrapper" } %>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <%= f.button :submit, 'Request to Join', class: "btn btn-secondary btn-lg btn-booking" %>
+  </div>
+<% end %>
+
+
+
