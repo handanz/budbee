@@ -1,4 +1,20 @@
-<%= image_tag "book", class: "mb-5" %>
+<% content_for :navbar do %>
+  <%= render "shared/navbar_without_search" %>
+<% end %>
+<div class="text-center d-flex justify-content-center">
+  <div class="search search-group-index">
+  <%= form_tag groups_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a group...",
+    class: "form-control string required"
+  %>
+  <% end %>
+<%= submit_tag "Search", class: " search-button-banner" %>
+</div>
+</div>
+
 
 <% @groups.each do |group| %>
   <div class="container group-cards-list">
