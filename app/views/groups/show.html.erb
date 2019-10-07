@@ -19,11 +19,11 @@
         <%= @group.city %>
         <br>
         <br>
-        <% @group.users.each do |user| %>
         <h4>Members</h4>
-        <%= link_to profile_path(user) do %>
-        <%= user.first_name %>
-        <% end %>| Jonas | Lilly
+        <% @group.users.each do |user| %>
+          <%= link_to profile_path(user), class: "group-member-link" do %>
+            <%= user.first_name %>
+          <% end %>
         <% end %>
       <br>
       </div>
