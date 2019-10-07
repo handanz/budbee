@@ -29,3 +29,14 @@
   width: 36%;
   margin-top: 18px;
 }
+.org-card {
+  position: relative;
+}
+.org-card .group-public-tag {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  padding: 4px 6px;
+}
