@@ -19,6 +19,9 @@
           <div class="flex-group-container">
             <% @groups.each do |group| %>
             <div class="org-card">
+              <div class="group-public-tag">
+                <p>Public</p>
+              </div>
               <%= image_tag (group.image) %>
               <div class="org-card-infos">
                 <div class="info-left">
