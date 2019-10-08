@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :user_meeting, dependent: :destroy
   has_many :groups, through: :user_groups
   has_many :meetings, through: :user_meeting
+  has_many :articles, dependent: :destroy
   acts_as_taggable_on :tags
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
