@@ -195,43 +195,7 @@ article.save
 # user_group2.save
 
 puts "Creating meetings"
-meetings = Meeting.create! [
-  {
-    title: "UiO psychology Monday meetup",
-    description: "This meeting is for students who wants to know more about this group. We are meeting on Monday to discuss about what we are aiming at for this semester. ps. We are some ambitious students, and wish for a good grade for this semester.",
-    time: "2019-10-14 17:00",
-    address: "chr.krohgs gate 1, Oslo",
-    group_id: "1",
-  },
-  {
-    title: "Meetup for information sharing",
-    description: "This meeting is for students who wnats to know more about the courses in university",
-    time: "2019-10-24 18:00",
-    address: "chr.krohgs gate 1, Oslo",
-    group_id: "2",
-  },
-  {
-    title: "Meetup for course",
-    description: "This meeting is for students who wnats to know more about this Phsychology course",
-    time: "2019-11-06 18:00",
-    address: "chr.krohgs gate 1, Oslo",
-    group_id: "7",
-  },
-  {
-    title: "Meetup for Interests",
-    description: "This meeting is for people who wnats to share their interests and to know more about others",
-    time: "2019-11-21 17:00",
-    address: "chr.krohgs gate 1, Oslo",
-    group_id: "9",
-  },
-  {
-    title: "Meetup for study groups",
-    description: "This meeting is for students who wnats to find friends for study",
-    time: "2019-12-02 17:00",
-    address: "chr.krohgs gate 1, Oslo",
-    group_id: "11",
-  }
-]
+
 
 meeting1 = Meeting.new
 meeting1.title = "UiO psychology Monday meetup"
