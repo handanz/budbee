@@ -12,6 +12,17 @@
               |
             <% end %>
           <% end %>
+          <br>
+          <div class="mt-5">
+            <p><%= @user.first_name %>' recent articles:</p>
+            <% @articles.each do |article| %>
+              <%= link_to article_path, class: "group-card-link" do %>
+              <div class="group-member-link">
+                <%= article.title %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
