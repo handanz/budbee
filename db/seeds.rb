@@ -212,7 +212,7 @@ meetings = Meeting.create! [
 meeting1 = Meeting.new
 meeting1.title = "UiO psychology Monday meetup"
 meeting1.description = "This meeting is for students who wants to know more about this group. We are meeting on Monday to discuss about what we are aiming at for this semester. ps. We are some ambitious students, and wish for a good grade for this semester."
-meeting1.time = "14/10/2019 17:00"
+meeting1.time = "2019-10-14 17:00:00"
 meeting1.address = "chr.krohgs gate 1, Oslo"
 meeting1.group = Group.all[6]
 meeting1.save
@@ -221,7 +221,7 @@ meeting1.save
 meeting2 = Meeting.new
 meeting2.title = "Meetup for study groups"
 meeting2.description = "This meeting is for people who wnats to share their interests and to know more about others"
-meeting2.time = "28/10/2019 17:00"
+meeting2.time = "2019-10-28 17:00:00"
 meeting2.address = "chr.krohgs gate 1, Oslo"
 meeting2.group = Group.all[6]
 meeting2.save
@@ -236,11 +236,6 @@ user_meeting1.user = User.all[1]
 user_meeting1.meeting = Meeting.first
 user_meeting1.save
 
-user_meeting2 = UserMeeting.new
-user_meeting2.user = User.last
-user_meeting2.meeting = Meeting.first
-user_meeting2.save
-
 user_meeting_a = UserMeeting.new
 user_meeting_a.user = User.first
 user_meeting_a.meeting = Meeting.all[6]
@@ -251,9 +246,6 @@ user_meeting_b.user = User.all[4]
 user_meeting_b.meeting = Meeting.all[6]
 user_meeting_b.save
 
-user_meeting_c = UserMeeting.new
-user_meeting_c.user = User.last
-user_meeting_c.meeting = Meeting.all[6]
-user_meeting_c.save
+
 
 p "Users and Meetings created"

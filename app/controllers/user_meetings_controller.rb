@@ -1,8 +1,10 @@
 class UserMeetingsController < ApplicationController
   def create
+    @group = Group.find(params[:user_meeting][:group_id])
     @user_meeting = UserMeeting.new
     @user_meeting.user = current_user
-    @user_meeting.meeting = Meeting.find(params[:user_meeting][:meeting])
+    meeting_date = params[:user_meeting][:meeting]
+    @user_meeting.meeting = Meeting.where(group: @group, time: meeting_date).first
 
     if @user_meeting.save
       flash[:notice] = "You have requested to join the meeting"

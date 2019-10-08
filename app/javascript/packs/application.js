@@ -2,14 +2,6 @@ import "bootstrap";
 import flatpickr from "flatpickr";
 import 'flatpickr/dist/flatpickr.min.css'
 
-flatpickr(".datepicker", {
-  // locale: {
+import { initFlatpickr } from '../plugins/init_flatpickr'
 
-  // }
-  enable: [
-    function() {
-
-    }
-  ]
-  minDate: "today"
-});
+initFlatpickr();
