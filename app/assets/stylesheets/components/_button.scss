@@ -3,3 +3,22 @@
   margin: 0;
   border: none;
 }
+
+.back-button {
+  text-decoration: none;
+  background: $red;
+  color: white !important;
+  padding: 6px 12px;
+  width: 60px;
+  border-radius: 2px;
+  text-align: right;
+  float: right;
+  margin-right: 40px;
+  :hover {
+    text-decoration: none;
+  }
+}
+
+a.link {
+  color: white;
+}

@@ -1,5 +1,3 @@
-
-
 <div class="container">
   <div class="row">
     <div class="col-8">
@@ -12,7 +10,7 @@
     <div class="col-4">
       <div class="my-4 flex-start">
         <h2 class="card-name">
-        <%= @group.name %>
+          <%= @group.name %>
         </h2>
         <p><%= @group.description %></p>
         <h4>City</h4>
@@ -25,8 +23,12 @@
             <%= user.first_name %>
           <% end %>
         <% end %>
-      <br>
+        <br>
       </div>
     </div>
   </div>
-<div>
+  <div class="back-button">
+    <%= link_to "back", :back, class: "link" %>
+  </div>
+</div>
+

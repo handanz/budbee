@@ -14,4 +14,8 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
   end
+
+  def back
+    redirect_back(fallback_location: groups_path)
+  end
 end

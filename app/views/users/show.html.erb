@@ -7,7 +7,10 @@
           <h3><%= @user.first_name %></h3>
           <br>
           <% @interests.each do |interest| %>
-          <%= interest %>|
+            <%= interest %>
+            <% unless interest == @interests.last %>
+              |
+            <% end %>
           <% end %>
         </div>
       </div>

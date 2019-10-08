@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   resources :groups, only: [ :show, :index ] do
     resources :meetings, only: [ :show ]
   end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

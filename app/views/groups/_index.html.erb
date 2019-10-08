@@ -15,7 +15,6 @@
 </div>
 </div>
 
-
 <% @groups.each do |group| %>
   <div class="container group-cards-list">
     <%= link_to group_path(group), class: "group-card-link" do %>
@@ -30,4 +29,6 @@
     <% end %>
   </div>
 <% end %>
-
+<div class="back-button">
+  <%= link_to "back", :back, class: "link" %>
+</div>
