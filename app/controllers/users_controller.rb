@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    #article = Article.find(params[:article_id])
     @image = @user.image
     @groups = @user.groups
     @meetings = @user.meetings
