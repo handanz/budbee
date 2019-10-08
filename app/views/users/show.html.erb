@@ -39,16 +39,21 @@
         </div>
         <div class="profile-meetups">
           <h3>Upcoming meetup</h3>
+          <div class="upcoming-meetup-schedule">
+            <div class="upcoming-meeting-month">
+            <h4><%= @meeting.time.strftime("%b") %></h4>
+            </div>
+            <div class="upcoming-meeting-time">
+            <h3><%= @meeting.time.day %></h3>
+            </div>
+          </div>
           <div class="flex-upcoming-container">
             <% if @meeting %>
-            <div class="upcoming-meetup">
-              <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Upcoming Meetup">
               <div class="upc-card">
                 <%= @meeting.title %>
                 <%= @meeting.time %>
                 <%= @meeting.description %>
               </div>
-            </div>
             <% end %>
           </div>
         </div>
