@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 70px);
   color: white;
   margin: none;
   display: flex;
@@ -13,17 +13,43 @@
 .banner h1 {
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 36px;
+  font-size: 54px;
   font-weight: bold;
   text-align: center;
-  font-family: pangolin;
-  }
+}
 
 .banner p {
   font-size: 28px;
-  // margin-bottom: 1;
   color: white;
   opacity: .7;
   text-align: center;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.search-banner {
+  font-size: 2rem;
+  margin-top: 48px;
+
+  .search-button-banner {
+    padding: 12px 24px;
+    margin: 0 24px;
+    background-color: $red;
+    border: none;
+    color: white;
+    height: 70px;
+    font-weight: bold;
+  }
+  input[type="text"] {
+    height: 70px;
+    font-size: 36px;
+    border-radius: 0;
+    opacity: .9;
+    padding: 0 24px;
+    width: 400px;
+    border: none;
+    &:focus {
+      border: none;
+    }
+  }
+
 }

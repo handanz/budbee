@@ -16,4 +16,8 @@ class GroupsController < ApplicationController
     @user_meeting = UserMeeting.new
     @dates = @group.meetings.map { |meeting| meeting.time.to_s }
   end
+
+  def back
+    redirect_back(fallback_location: groups_path)
+  end
 end

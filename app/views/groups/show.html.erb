@@ -10,20 +10,20 @@
     <div class="col-4">
       <div class="my-4 flex-start">
         <h2 class="card-name">
-        <%= @group.name %>
+          <%= @group.name %>
         </h2>
         <p><%= @group.description %></p>
         <h4>City</h4>
         <%= @group.city %>
         <br>
         <br>
-        <% @group.users.each do |user| %>
         <h4>Members</h4>
-        <%= link_to profile_path(user) do %>
-        <%= user.first_name %>
-        <% end %>|
+        <% @group.users.each do |user| %>
+          <%= link_to profile_path(user), class: "group-member-link" do %>
+            <%= user.first_name %>
+          <% end %>
         <% end %>
-      <br>
+        <br>
       </div>
     </div>
   </div>
@@ -44,6 +44,7 @@
     <%= f.button :submit, 'Request to Join', class: "btn btn-secondary btn-lg btn-booking" %>
   </div>
 <% end %>
-
-
-
+  <div class="back-button">
+    <%= link_to "back", :back, class: "link" %>
+  </div>
+</div>

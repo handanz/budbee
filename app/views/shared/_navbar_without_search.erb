@@ -4,21 +4,7 @@
    <%= image_tag "logo.png", class: "logo" %>
   <% end %>
 
-
   <div class="d-flex">
-    <div class="search">
-      <%= form_tag groups_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "find a group",
-        class: "form-control string required"
-      %>
-      <% end %>
-    </div>
-    <%= submit_tag "Search", class: " search-button-navbar" %>
-    <div class="vertical-divider"></div>
-
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

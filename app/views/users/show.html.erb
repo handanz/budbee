@@ -7,7 +7,10 @@
           <h3><%= @user.first_name %></h3>
           <br>
           <% @interests.each do |interest| %>
-          <%= interest %>|
+            <%= interest %>
+            <% unless interest == @interests.last %>
+              |
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -20,6 +23,7 @@
             <% @groups.each do |group| %>
             <div class="org-card">
               <%= image_tag (group.image) %>
+              <div class="group-public-tag">Public</div>
               <div class="org-card-infos">
                 <div class="info-left">
                   <p><strong><%= group.name %></strong></p>

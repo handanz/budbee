@@ -155,6 +155,7 @@ groups = Group.create! [
   },
 ]
 
+puts "Creating UserGroups"
 user_group = UserGroup.new
 user_group.user = User.first
 user_group.group = Group.first
@@ -164,6 +165,13 @@ second_group = UserGroup.new
 second_group.user = User.first
 second_group.group = Group.all[6]
 second_group.save
+
+users.last(3).each do |user|
+  ug = UserGroup.new
+  ug.user = user
+  ug.group = Group.first
+  ug.save
+end
 
 # user_group1 = UserGroup.new(confirmed: true, user_id: User.first.id, group_id: Group.first.id)
 # user_group1.save
