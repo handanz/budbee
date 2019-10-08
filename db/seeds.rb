@@ -18,13 +18,15 @@ p "Destroying Users, Groups, and Meetings.."
 
 puts "Creating users"
 
+#line_photo = File.read('app/assets/images/linelong.png')
+
 users = User.create! [
   { email: "hello@text.co",
     password: "morning",
     username: "line23",
     first_name: "Line",
     last_name: "Pederson",
-    image: "https://images.unsplash.com/photo-1541943181603-d8fe267a5dcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=312&q=80",
+    image: "line.png",
     tag_list: "UiO, psychology, paiting, python, cooking, social psychology"
   },
   { email: "honey@text.co",

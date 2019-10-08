@@ -6,7 +6,9 @@
   <div class="row">
     <div class="col-3">
       <div class="text-center">
-      <img src="<%= @user.image %>" class="card-img-top" alt="@user.first_name">
+        <div>
+          <%= image_tag (@user.image), class: "profile-avatar mask my-3" %>
+        </div>
       <div class="my-3">
         <%= @user.first_name %>
       </div>

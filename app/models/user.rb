@@ -20,7 +20,7 @@ class User < ApplicationRecord
   end
 
   def set_default_image
-    self.image = "https://miro.medium.com/max/720/1*W35QUSvGpcLuxPo3SRTH4w.png"
+    self.image = "https://miro.medium.com/max/720/1*W35QUSvGpcLuxPo3SRTH4w.png" if image.nil?
   end
 
   def no_image?
