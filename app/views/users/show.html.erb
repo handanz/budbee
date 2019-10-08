@@ -13,6 +13,17 @@
               |
             <% end %>
           <% end %>
+          <br>
+          <div class="mt-5">
+            <p><%= @user.first_name %>' recent articles:</p>
+            <% @articles.each do |article| %>
+              <%= link_to article_path, class: "group-card-link" do %>
+              <div class="group-member-link">
+                <%= article.title %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -43,16 +54,24 @@
 
         <div class="profile-meetups">
           <h3>Upcoming meetup</h3>
+          <% unless @meeting == nil %>
+
+          <div class="upcoming-meetup-schedule">
+            <div class="upcoming-meeting-month">
+            <h4><%= @meeting.time.strftime("%b") %></h4>
+            </div>
+            <div class="upcoming-meeting-time">
+            <h3><%= @meeting.time.day %></h3>
+            </div>
+          </div>
+          <% end %>
           <div class="flex-upcoming-container">
             <% if @meeting %>
-            <div class="upcoming-meetup">
-              <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Upcoming Meetup">
               <div class="upc-card">
                 <p><strong><%= @meeting.title %></strong></p>
                 <p><strong><%= @meeting.time %></strong></p>
                 <p><%= @meeting.description %></p>
               </div>
-            </div>
             <% end %>
           </div>
         </div>
