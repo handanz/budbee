@@ -2,16 +2,16 @@
   flex-direction: row;
   display: flex; /* or inline-flex */
   // flex-grow: 0; /* default 0 */
+  margin-top: 18px;
+  margin-right: 18px
 }
-
-// .item {
-//   order: <integer>; /* default is 0 */
-// }
 
 .flex-group-container {
   flex-direction: row;
   display: flex; /* or inline-flex */
   // flex-grow: 0; /* default 0 */
+  margin-top: 25px;
+  justify-content: space-evenly;
 }
 
 .flex-upcoming-container {
@@ -21,22 +21,19 @@
 }
 
 .profile-groups {
+  // width: 66%;
   width: 62%;
-  margin-top: 18px;
+  //margin-top: 18px;
 }
 
 .profile-meetups {
-  width: 36%;
-  margin-top: 18px;
+  // width: 33%;
+  width: 38%;
+  //margin-top: 18px;
 }
-.org-card {
-  position: relative;
-}
-.org-card .group-public-tag {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  padding: 4px 6px;
+
+.vr {
+  width:1px;
+  border-left: 1px solid $light-gray;
+  heigth: vh;
 }

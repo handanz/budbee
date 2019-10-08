@@ -1,6 +1,7 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-3 px-1 bg-light">
+  <div class="flex-profile-container">
+    <div class="row">
+    <div class="col-sm-2 px-1 bg-">
       <div class="py-2 sticky-top flex-grow-1">
         <div class="nav flex-sm-column text-center">
           <%= image_tag (@user.image), class: "profile-avatar mask my-3" %>
@@ -15,10 +16,12 @@
         </div>
       </div>
     </div>
+    <div class="vr">&nbsp;</div>
+
     <div class="col" id="main">
       <div class="flex-profile-container">
         <div class="profile-groups">
-          <h3><%= @user.first_name %>'s groups</h3>
+          <h3>Groups <%= @user.first_name %> is in</h3>
           <div class="flex-group-container">
             <% @groups.each do |group| %>
             <div class="org-card">
@@ -37,6 +40,7 @@
             <% end %>
           </div>
         </div>
+
         <div class="profile-meetups">
           <h3>Upcoming meetup</h3>
           <div class="flex-upcoming-container">
@@ -44,9 +48,9 @@
             <div class="upcoming-meetup">
               <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Upcoming Meetup">
               <div class="upc-card">
-                <%= @meeting.title %>
-                <%= @meeting.time %>
-                <%= @meeting.description %>
+                <p><strong><%= @meeting.title %></strong></p>
+                <p><strong><%= @meeting.time %></strong></p>
+                <p><%= @meeting.description %></p>
               </div>
             </div>
             <% end %>
