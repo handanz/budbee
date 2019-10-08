@@ -39,6 +39,8 @@
         </div>
         <div class="profile-meetups">
           <h3>Upcoming meetup</h3>
+          <% unless @meeting == nil %>
+
           <div class="upcoming-meetup-schedule">
             <div class="upcoming-meeting-month">
             <h4><%= @meeting.time.strftime("%b") %></h4>
@@ -47,6 +49,7 @@
             <h3><%= @meeting.time.day %></h3>
             </div>
           </div>
+          <% end %>
           <div class="flex-upcoming-container">
             <% if @meeting %>
               <div class="upc-card">
