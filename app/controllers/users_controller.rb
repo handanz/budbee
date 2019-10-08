@@ -10,5 +10,6 @@ class UsersController < ApplicationController
     @meetings = @user.meetings
     @meeting = @meetings.first
     @interests = @user.tag_list
+    @articles = @user.articles
   end
 end
