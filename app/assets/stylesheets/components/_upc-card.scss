@@ -1,16 +1,21 @@
 .upc-card {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 8px rgba(0,0,0,0.2);
   width: 100%;
-  margin-top: 110px;
+  //margin-top: 110px;
   padding:15px
+}
+
+.upcoming-meetup {
+  overflow: hidden;
 }
 
 .upcoming-meetup > img {
   height: 300px;
   width: 100%;
   margin-top: 15px;
+  margin-left: 15px;
   object-fit: cover;
  }
 
@@ -22,12 +27,13 @@
 
 .upc-card p {
   font-size: 16px;
-  opacity: .7;
+  opacity: 1;
   margin: 0;
+  // padding-top: 5px;
 }
 
 .upc-card .upc-card-infos {
-  // padding: 16px;
+  padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -43,3 +49,32 @@
 //   width: 40px;
 // }
 
+.upcoming-meetup-schedule {
+  margin-left: 12px;
+  // margin-right: 280px;
+  margin-top: 40px;
+  margin-bottom: 8px;
+  width: 100px ;
+}
+.upcoming-meeting-month {
+  border: 1px;
+  border-style: solid;
+  padding: 5px 5px;
+  background: $red;
+}
+.upcoming-meeting-month h4 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.upcoming-meeting-time {
+  border: 1px;
+  border-style: solid;
+  padding: 10px;
+}
+.upcoming-meeting-time h3 {
+  font-size: 32px;
+  font-size: bolder;
+  text-align: center;
+}
