@@ -8,7 +8,7 @@
       <div class="text-center">
       <img src="<%= @user.image %>" class="card-img-top" alt="@user.first_name">
       <div class="my-3">
-        <%= @user.first_name %>
+      <%= link_to(@user.first_name, profile_path(@user)) %>
       </div>
       </div>
     </div>
