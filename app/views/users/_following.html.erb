@@ -1,10 +1,3 @@
-<% if current_user.is_following?(user.id) %>
-  <%= link_to "Unfollow", unfollow_user_path(user.id), method: :post, remote: true %>
-<% else %>
-  <div class="following">
-    <%= link_to "Follow", follow_user_path(user.id), method: :post, remote: true %>
-  </div>
-<% end %>
 <div>
   Followers: <%= follower_count %>
 </div>
@@ -13,4 +6,11 @@
 </div>
 
 
+<% if current_user.is_following?(user.id) %>
 
+<%= link_to "Unfollow", unfollow_user_path(user.id), method: :post, remote: true %>
+<% else %>
+<div class="following">
+  <%= link_to "Follow", follow_user_path(user.id), method: :post, remote: true %>
+</div>
+<% end %>
