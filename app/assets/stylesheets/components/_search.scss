@@ -7,9 +7,9 @@
   margin-top: 16px;
 }
 
-.btn :hover {
-  opacity: 0.8;
-}
+// .btn :hover {
+//   opacity: 0.8;
+// }
 
 .search-form-control .form-control {
   justify-content: center;
@@ -44,6 +44,9 @@
     height: 70px;
     font-weight: bold;
     border-radius: 2px;
+    &:hover {
+    background-color: darken(#FA5F6A, 10%)
+    }
   }
   input[type="text"] {
     background-color: white !important;
