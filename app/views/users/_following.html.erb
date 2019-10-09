@@ -5,7 +5,6 @@
   Following: <%= following_count %>
 </div>
 
-
 <% if current_user.is_following?(user.id) %>
 
 <%= link_to "Unfollow", unfollow_user_path(user.id), method: :post, remote: true %>

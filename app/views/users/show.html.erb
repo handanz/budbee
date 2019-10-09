@@ -45,39 +45,42 @@
         </div>
         <!-- <div class="vr">&nbsp;</div> -->
       </div>
-
-
       <div class="col-sm-6">
         <!-- flex-profile-container -->
         <div class="profile-groups">
+          <div class="ml-4">
           <% if current_user == @user %>
           <h3>Groups I am in</h3>
           <% else %>
           <h3>Groups <%= @user.first_name %> is in</h3>
           <% end %>
-
-
+          </div>
           <div class="flex-group-container">
             <% @groups.each do |group| %>
-            <div class="org-card">
-              <%= image_tag (group.image) %>
-              <div class="group-public-tag">Public</div>
-              <div class="org-card-infos">
-                <div class="info-left">
-                  <p><strong><%= group.name %>
-                  </strong></p>
-                  <!-- <p text-right><%= group.city %></p> -->
+              <div class="org-card">
+              <%= link_to group_path(group), class: "group-card-link" do %>
+                <%= image_tag (group.image) %>
+                <div class="group-public-tag">Public</div>
+                <div class="org-card-infos group-member-link">
+                  <div class="info-left">
+                    <p><strong><%= group.name %>
+                    </strong></p>
+                    <!-- <p text-right><%= group.city %></p> -->
+                  </div>
+                  <br>
+                  <div class="info-right flex-grow-1 w-100">
+                    <p><%= group.description %></p>
+                  </div>
                 </div>
-                <br>
-                <div class="info-right flex-grow-1 w-100">
-                  <p><%= group.description %></p>
-                </div>
+              <% end %>
               </div>
-            </div>
             <% end %>
           </div>
         </div>
       </div>
+
+
+
 
       <div class="profile-meetups col-sm-3">
         <h3>Upcoming meetup</h3>
