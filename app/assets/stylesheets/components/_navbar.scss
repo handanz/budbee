@@ -19,12 +19,13 @@
 
 .form-control {
   border: none;
-  border-bottom: 1px dashed $light-gray;
+  border-bottom: 1px solid $light-gray;
   padding: 10px;
   &:focus {
     box-shadow: none;
     border-color: inherit;
-    border-width: 3px;
+    border-width: 2px;
+    color: $light-gray;
   }
 }
 
@@ -32,6 +33,8 @@
   height: 50px;
   display: flex;
   align-items: center;
+  background-color: white;
+
 }
 
 .search-button-navbar {
