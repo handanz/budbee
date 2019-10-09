@@ -14,6 +14,13 @@
             <% end %>
           <% end %>
           <br>
+
+        <div id="following-container">
+        <!-- render partial: following. shows 'follow'/'unfollow' -->
+        <%= render 'following', user: @user, following_count: @following_count, follower_count: @follower_count %>
+
+        </div>
+
           <div class="mt-5">
             <p><%= @user.first_name %>' recent articles:</p>
             <% @articles.each do |article| %>
