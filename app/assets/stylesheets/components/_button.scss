@@ -22,3 +22,13 @@
 a.link {
   color: white;
 }
+
+.btn {
+  background: $red;
+  font-weight: bold;
+  border: none;
+
+  &:hover {
+   background-color: darken(#FA5F6A, 5%)
+   }
+}
