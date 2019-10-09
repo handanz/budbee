@@ -8,15 +8,14 @@
   <div class="d-flex">
     <div class="search">
       <%= form_tag groups_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "find a group",
-        class: "form-control string required"
-      %>
+        <%= text_field_tag :query,
+          params[:query],
+          placeholder: "find a group",
+          class: "inline-form-control string required"
+        %>
+        <%= submit_tag "Search", class: " search-button-navbar" %>
       <% end %>
     </div>
-    <%= submit_tag "Search", class: " search-button-navbar" %>
     <div class="vertical-divider"></div>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
