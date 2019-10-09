@@ -19,8 +19,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @future_meetings = @group.meetings.where(
-      'time >= ?', Time.now)
+    @future_meetings = @group.meetings.where('time >= ?', Time.now)
     @user_meeting = UserMeeting.new
     @dates = @future_meetings.map { |meeting| meeting.time.to_s }
   end
