@@ -7,6 +7,7 @@ class Group < ApplicationRecord
 
   pg_search_scope :global_search,
     against: [:name, :description, :city],
+    associated_against: [tags: :name],
     using: {
       tsearch: { prefix: true }
     }

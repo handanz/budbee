@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include PgSearch::Model
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniaut
   has_many :user_groups, dependent: :destroy
@@ -12,6 +13,12 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
   validates :username, uniqueness: true
+
+  pg_search_scope :global_search,
+    against: [:username, :first_name, :last_name],
+    using: {
+      tsearch: { prefix: true }
+    }
 
   before_save :set_default_image, if: :no_image?
   # use this instead of email_changed? for Rails = 5.1.x def will_save_change_to_email?
