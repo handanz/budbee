@@ -43,8 +43,13 @@
   font-size: 16px;
   &:hover {
   text-decoration: none;
-  color: #A9A9A9;
+  color: black;
+  font-weight: bold;
   }
+}
+
+.group-member-small-link {
+
 }
 
 .card-product {
@@ -125,4 +130,7 @@
 
 .blog-content {
   margin: 80px 60px;
+}
+ul {
+  list-style-type: none;
 }
