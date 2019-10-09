@@ -1,3 +1,14 @@
 .sidebar {
   border-right: 1px solid gray;
 }
+.following {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  a {
+    text-decoration: none;
+    color: $red;
+    &:hover {
+      color: darken($red, 20%);
+    }
+  }
+}
