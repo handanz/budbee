@@ -29,21 +29,24 @@
   </div>
 <div>
 
-<%= simple_form_for(@user_meeting) do |f| %>
-  <div class="dates">
-    <div class="form-inputs">
-      <div class="form-row">
-        <div id="meeting-dates" data-meeting-dates="<%= @dates %>"></div>
-        <%= f.input :meeting, as: :string, input_html: { class: "datepicker" }, label: 'Meet-ups', collection: @group.meetings, wrapper_html: { class: "inline_field_wrapper" } %>
-        <%= f.input :group_id, as: :hidden, input_html: { value: @group.id } %>
-        <%#= f.input :time, as: :string, input_html: { class: "datepicker" }, label: "Dates from", placeholder: "yy/mm/dd", wrapper_html: { class: "inline_field_wrapper" } %>
+<% if @future_meetings.count.positive? %>
+  <%= simple_form_for(@user_meeting) do |f| %>
+    <div class="dates">
+      <div class="form-inputs">
+        <div class="form-row">
+          <div id="meeting-dates" data-meeting-dates="<%= @dates %>"></div>
+          <%= f.input :meeting, as: :string, input_html: { class: "datepicker" }, label: 'Want to join an upcoming meeting?', collection: @group.meetings, wrapper_html: { class: "inline_field_wrapper" } %>
+          <%= f.input :group_id, as: :hidden, input_html: { value: @group.id } %>
+          <%#= f.input :time, as: :string, input_html: { class: "datepicker" }, label: "Dates from", placeholder: "yy/mm/dd", wrapper_html: { class: "inline_field_wrapper" } %>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="form-row">
-    <%= f.button :submit, 'Request to Join', class: "btn btn-secondary btn-lg btn-booking" %>
-  </div>
+    <div class="form-row">
+      <%= f.button :submit, 'Request to Join', class: "btn btn-secondary btn-lg btn-booking" %>
+    </div>
+  <% end %>
 <% end %>
+
   <div class="back-button">
     <%= link_to "back", :back, class: "link" %>
   </div>
