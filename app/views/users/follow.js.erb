@@ -1,0 +1,6 @@
+function renderFollowing(followingHTML) {
+  const followingContainer = document.getElementById("following-container");
+  followingContainer.innerHTML = followingHTML;
+}
+
+renderFollowing("<%= j render 'following', user: @user, following_count: @following_count, follower_count: @follower_count %>");
