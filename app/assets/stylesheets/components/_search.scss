@@ -8,7 +8,7 @@
 }
 
 .btn :hover {
-  color: $red;
+  opacity: 0.8;
 }
 
 .search-form-control .form-control {
@@ -32,7 +32,7 @@
 }
 
 .search-group-index {
-  font-size: 2rem;
+  font-size: 24px;
   margin: 48px 0;
   height: 100px;
   .search-button-banner {
@@ -43,11 +43,12 @@
     color: white;
     height: 70px;
     font-weight: bold;
+    border-radius: 2px;
   }
   input[type="text"] {
     background-color: white !important;
     height: 70px;
-    font-size: 36px;
+    font-size: 24px;
     border-radius: 0;
     padding: 0 24px;
     width: 400px;
