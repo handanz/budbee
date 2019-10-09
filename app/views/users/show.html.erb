@@ -1,81 +1,83 @@
 <div class="container-fluid">
   <div class="flex-profile-container">
     <div class="row">
-    <div class="col-sm-2 px-1 bg-">
-      <div class="py-2 sticky-top flex-grow-1">
-        <div class="nav flex-sm-column text-center">
-          <%= image_tag (@user.image), class: "profile-avatar mask my-3" %>
-          <h3><%= @user.first_name %></h3>
-          <br>
-          <% @interests.each do |interest| %>
-            <%= interest %>
-            <% unless interest == @interests.last %>
+      <div class="col-sm-2 px-1 bg-">
+        <div class="py-2 sticky-top flex-grow-1">
+          <div class="nav flex-sm-column text-center">
+            <%= image_tag (@user.image), class: "profile-avatar mask my-3" %>
+            <h3><%= @user.first_name %></h3>
+            <br>
+            <% @interests.each do |interest| %>
+              <%= interest %>
+              <% unless interest == @interests.last %>
               |
+              <% end %>
             <% end %>
-          <% end %>
-          <br>
-          <div class="mt-5">
-            <p><%= @user.first_name %>' recent articles:</p>
-            <% @articles.each do |article| %>
+            <br>
+            <div class="mt-5">
+              <p><%= @user.first_name %>' recent articles:</p>
+              <% @articles.each do |article| %>
               <%= link_to article_path(article), class: "group-card-link" do %>
               <div class="group-member-link">
                 <%= article.title %>
-                </div>
+              </div>
               <% end %>
-            <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="vr">&nbsp;</div>
+      <div class="vr">&nbsp;</div>
 
-    <div class="col" id="main">
-      <div class="flex-profile-container">
-        <div class="profile-groups">
-          <h3>Groups <%= @user.first_name %> is in</h3>
-          <div class="flex-group-container">
-            <% @groups.each do |group| %>
-            <div class="org-card">
-              <%= image_tag (group.image) %>
-              <div class="group-public-tag">Public</div>
-              <div class="org-card-infos">
-                <div class="info-left">
-                  <p><strong><%= group.name %></strong></p>
-                  <p><strong><%= group.city %></strong></p>
+      <div class="col" id="main">
+        <div class="flex-profile-container">
+          <div class="profile-groups">
+            <h3>Groups <%= @user.first_name %> is in</h3>
+            <div class="flex-group-container">
+              <% @groups.each do |group| %>
+              <div class="org-card">
+                <%= image_tag (group.image) %>
+                <div class="group-public-tag">Public</div>
+                <div class="org-card-infos">
+                  <div class="info-left">
+                    <p><strong><%= group.name %></strong></p>
+                    <p><strong><%= group.city %></strong></p>
+                  </div>
+                  <div class="info-right flex-grow-1 w-100">
+                    <p><%= group.description %></p>
+                  </div>
                 </div>
-                <div class="info-right flex-grow-1 w-100">
-                  <p><%= group.description %></p>
-                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="profile-meetups">
+            <h3>Upcoming meetup</h3>
+            <% unless @meeting == nil %>
+
+            <div class="upcoming-meetup-schedule">
+              <div class="upcoming-meeting-month">
+                <h4><%= @meeting.time.strftime("%b") %></h4>
+              </div>
+              <div class="upcoming-meeting-time">
+                <h3><%= @meeting.time.day %></h3>
               </div>
             </div>
             <% end %>
-          </div>
-        </div>
-
-        <div class="profile-meetups">
-          <h3>Upcoming meetup</h3>
-          <% unless @meeting == nil %>
-
-          <div class="upcoming-meetup-schedule">
-            <div class="upcoming-meeting-month">
-            <h4><%= @meeting.time.strftime("%b") %></h4>
-            </div>
-            <div class="upcoming-meeting-time">
-            <h3><%= @meeting.time.day %></h3>
-            </div>
-          </div>
-          <% end %>
-          <div class="flex-upcoming-container">
-            <% if @meeting %>
+            <div class="flex-upcoming-container">
+              <% if @meeting %>
               <div class="upc-card">
                 <p><strong><%= @meeting.title %></strong></p>
                 <p><strong><%= @meeting.time %></strong></p>
                 <p><%= @meeting.description %></p>
               </div>
-            <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
