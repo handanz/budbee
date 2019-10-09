@@ -3,6 +3,13 @@ Rails.application.routes.draw do
   # get "/profile/:id", to: 'users#show', as: 'profile'
   devise_for :users
   root to: 'pages#home'
+  resources :users, only: [:index] do
+    member do
+      post :follow
+      post :unfollow
+
+    end
+  end
 
   devise_scope :user do
    get "/profile/:id", to: 'users#show', as: :profile
