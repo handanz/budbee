@@ -1,9 +1,9 @@
 <div class="container-fluid">
   <div class="flex-profile-container">
     <div class="row">
-      <div class="col-sm-3 px-1">
-        <div class="py-2 sticky-top flex-grow-1 px-3 py-2">
-          <div class="nav flex-sm-column text-center sidebar">
+      <div class="col-sm-3 px-1 sidebar">
+        <div class="py-5 sticky-top flex-grow-1 px-3 py-2">
+          <div class="nav flex-sm-column text-center">
             <%= image_tag (@user.image), class: "profile-avatar mask my-3" %>
             <h3><%= @user.first_name %></h3>
             <br>
@@ -45,8 +45,7 @@
         </div>
         <!-- <div class="vr">&nbsp;</div> -->
       </div>
-      <div class="col-sm-6">
-        <!-- flex-profile-container -->
+      <div class="col-sm-6 mt-4">
         <div class="profile-groups">
           <div class="ml-4">
           <% if current_user == @user %>
@@ -78,7 +77,7 @@
           </div>
         </div>
       </div>
-      <div class="profile-meetups col-sm-3">
+      <div class="profile-meetups col-sm-3 mt-4">
         <div class="profile-meetups">
           <% if @meeting == nil %>
           <h4>There is no upcoming meetings</h4>
