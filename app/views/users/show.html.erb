@@ -1,9 +1,9 @@
 <div class="container-fluid">
   <div class="flex-profile-container">
     <div class="row">
-      <div class="col-sm-3 px-1">
-        <div class="py-2 sticky-top flex-grow-1 px-3 py-2">
-          <div class="nav flex-sm-column text-center sidebar">
+      <div class="col-sm-3 px-1 sidebar">
+        <div class="py-5 sticky-top flex-grow-1 px-3 py-2">
+          <div class="nav flex-sm-column text-center">
             <%= image_tag (@user.image), class: "profile-avatar mask my-3" %>
             <h3><%= @user.first_name %></h3>
             <br>
@@ -12,7 +12,7 @@
               <%= render 'following', user: @user, following_count: @following_count, follower_count: @follower_count %>
             </div>
             <div class="mt-3">
-              <p><%= @user.first_name %>' recent articles:</p>
+              <p><%= @user.first_name %>'s recent articles:</p>
               <% if @articles.empty? %>
               <% if current_user == @user %>
               Add an article to your page.
@@ -45,8 +45,7 @@
         </div>
         <!-- <div class="vr">&nbsp;</div> -->
       </div>
-      <div class="col-sm-6">
-        <!-- flex-profile-container -->
+      <div class="col-sm-6 mt-4">
         <div class="profile-groups">
           <div class="ml-4">
           <% if current_user == @user %>
@@ -78,7 +77,7 @@
           </div>
         </div>
       </div>
-      <div class="profile-meetups col-sm-3">
+      <div class="profile-meetups col-sm-3 mt-4">
         <div class="profile-meetups">
           <% if @meeting == nil %>
           <h4>There is no upcoming meetings</h4>
@@ -100,12 +99,26 @@
             <br>
             <p><%= @meeting.description %></p>
           </div>
-          <% end %>
         </div>
+        <br>
+        <% @meeting.user_meetings.each do |user_meeting| %>
+            <% if user_meeting.unconfirmed? %>
+              <div class="meeting_request">
+                <% unless user_meeting.user == current_user %>
+                  <%= "#{user_meeting.user.first_name} wants to join" %>
+                  <%= link_to "Confirm",confirm_user_meeting_path(user_meeting.id) ,method: :post %>
+                <% else %>
+                  You want to join (request pending).
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+          <% end %>
       </div>
 
     </div>
 
   </div>
 </div>
+
 

@@ -11,29 +11,37 @@
   padding: 6px 12px;
   width: 60px;
   border-radius: 2px;
-  text-align: right;
+  text-align: center;
   float: right;
-  margin-right: 40px;
-  bottom: 45vh;
-  right: 0;
+  margin: 2.8rem;
+  left: 30px;
   position: fixed;
-  :hover {
+  &:hover {
     text-decoration: none;
     background-color: darken($light-gray, 10%);
   }
 }
 
 
-a.link {
+a.back-link {
   color: white;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .btn {
   background: $red;
   font-weight: bold;
   border: none;
+  margin-left: 15px;
 
   &:hover {
-   background-color: darken(#FA5F6A, 5%)
-   }
+   background-color: darken(#FA5F6A, 10%);
+  }
 }
+
+.form-group {
+  margin-left: 15px;
+}
+

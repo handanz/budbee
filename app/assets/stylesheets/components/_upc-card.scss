@@ -4,7 +4,7 @@
   // box-shadow: 0 0 8px rgba(0,0,0,0.2);
   width: 100%;
   //margin-top: 110px;
-  padding:15px
+  margin-topp: 15px;
 }
 
 .upcoming-meetup {
@@ -29,6 +29,7 @@
   font-size: 16px;
   opacity: 1;
   margin: 0;
+  margin-right: 25px;
   // padding-top: 5px;
 }
 
@@ -41,25 +42,14 @@
   // margin: 16px;
 }
 
-
-// .org-card-infos .card-trip-user {
-//   position: absolute;
-//   right: 16px;
-//   top: -20px;
-//   width: 40px;
-// }
-
 .upcoming-meetup-schedule {
-  // margin-left: 12px;
-  // // margin-right: 280px;
-  // margin-top: 40px;
-  // margin-bottom: 8px;
-  margin: 20px auto;
-  width: 100px ;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  width: 100px;
 }
+
 .upcoming-meeting-month {
   border-style: solid;
-  // padding: 5px 5px;
   margin: 0 auto;
   background: $red;
 }
@@ -74,6 +64,7 @@
   border: 1px;
   border-style: solid;
   padding: 10px;
+  border-top: none;
 }
 .upcoming-meeting-time h3 {
   font-size: 32px;

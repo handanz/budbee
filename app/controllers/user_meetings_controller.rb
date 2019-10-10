@@ -7,16 +7,29 @@ class UserMeetingsController < ApplicationController
     @user_meeting.meeting = Meeting.where(group: @group, time: meeting_date).first
 
     if @user_meeting.save
-      flash[:notice] = "You have requested to join the meeting"
+      flash[:notice] = "Your request has been sent"
     else
-      flash[:alert] = "Request to join the meeting failed"
+      flash[:alert] = "You already have a pending request"
     end
-
     group = @user_meeting.meeting.group
     if group
       redirect_to group_path group
     else
       redirect_to root_path
+    end
+  end
+
+  def confirm
+    @user_meeting = UserMeeting.find(params["id"])
+    @user_meeting.confirmed = true
+    if @user_meeting.save
+      flash[:notice] = "Your request has been confirmed"
+
+      redirect_to profile_path(current_user)
+    else
+      flash[:alert] = "Request Failed"
+
+      render "new"
     end
   end
 end

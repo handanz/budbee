@@ -141,3 +141,11 @@
 .form-control[readonly] {
   background-color: white;
 }
+
+.meeting_request a {
+    text-decoration: none;
+    color: #FA5F6A;
+}
+.meeting_request a:hover {
+    color: #ec0718;
+}
