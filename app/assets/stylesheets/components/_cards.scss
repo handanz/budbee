@@ -35,11 +35,12 @@
 
 .group-card-link:hover {
   text-decoration: none;
-  color: #6e6969;
+  color: #303030;
 }
+
 .group-member-link {
   margin: 5px;
-  color: #303030;
+  color: #6e6969;
   font-size: 16px;
   &:hover {
   text-decoration: none;
@@ -61,6 +62,11 @@
   border-style: solid;
   border-color: gray;
   border-width: 1px;
+
+   &:hover {
+    border-color: black;
+    outline: black 1px solid;
+  }
 }
 
 .card-product img {
@@ -126,4 +132,11 @@
 
 .blog-content {
   margin: 80px 60px;
+}
+
+#meeting-dates {
+  background-color: white;
+}
+.form-control[readonly] {
+  background-color: white;
 }
