@@ -18,17 +18,24 @@
         <br>
         <br>
         <h4>Members</h4>
-        <% @group.users.each do |user| %>
-          <%= link_to profile_path(user), class: "group-member-link" do %>
-            <%= user.first_name %>
+        <div class="d-flex flex-row mt-3">
+          <% @group.users.each do |user| %>
+            <%= link_to profile_path(user), class: "group-member-link" do %>
+              <%= image_tag (user.image) , class: "profile-avatar-small" %>
+              <div class="text-center">
+                <% if current_user == user %>
+                 me
+                <% else %>
+                <%= user.first_name %>
+                <% end %>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
         <br>
       </div>
     </div>
   </div>
-<div>
-
+  <div>
 <% if @future_meetings.count.positive? %>
   <%= simple_form_for(@user_meeting) do |f| %>
     <div class="dates">
@@ -51,3 +58,4 @@
     <%= link_to "back", :back, class: "link" %>
   </div>
 </div>
+
