@@ -29,7 +29,7 @@ users = User.create! [
     first_name: "Line",
     last_name: "Pederson",
     image: "line.png",
-    tag_list: "UiO, psychology, paiting, python, cooking, social psychology"
+    tag_list: "UiO, psychology, painting, python, cooking, social psychology"
   },
   { email: Faker::Internet.email,
     password: "1234567",
