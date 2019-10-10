@@ -17,7 +17,7 @@
   color: $red;
 }
 
-.form-control {
+.form-control, .inline-form-control {
   border: none;
   border-bottom: 1px solid $light-gray;
   padding: 10px;
@@ -27,6 +27,14 @@
     border-width: 2px;
     color: $light-gray;
   }
+}
+
+.inline-form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #93c4fd;
+  border: none none inherit none;
+  outline: none;
 }
 
 .search {
@@ -44,6 +52,10 @@
   height: 50px;
   padding: 0 18px;
   font-weight: bold;
+  border-radius: 2px;
+  &:hover {
+  background-color: darken(#FA5F6A, 10%)
+  }
 }
 
 .vertical-divider {

@@ -6,7 +6,7 @@
 
 .back-button {
   text-decoration: none;
-  background: $red;
+  background-color: darken($light-gray, 5%);
   color: white !important;
   padding: 6px 12px;
   width: 60px;
@@ -14,11 +14,26 @@
   text-align: right;
   float: right;
   margin-right: 40px;
+  bottom: 45vh;
+  right: 0;
+  position: fixed;
   :hover {
     text-decoration: none;
+    background-color: darken($light-gray, 10%);
   }
 }
 
+
 a.link {
   color: white;
+}
+
+.btn {
+  background: $red;
+  font-weight: bold;
+  border: none;
+
+  &:hover {
+   background-color: darken(#FA5F6A, 5%)
+   }
 }

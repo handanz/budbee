@@ -1,0 +1,33 @@
+.tag {
+  margin: none;
+  opacity: 0.8;
+  ul {
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+  }
+  ul li {
+    display: inline;
+    border: 1px solid $red;
+    padding: 4px 8px;
+    border-radius: 2px;
+    font-size: 14px;
+    margin-left: 6px;
+  }
+}
+
+.tags {
+  display: flex;
+  justify-content: evenly;
+  flex-wrap: wrap;
+
+  .indie-tag {
+    display: inline;
+    border: 1px solid $red;
+    padding: 4px 8px;
+    border-radius: 2px;
+    font-size: 14px;
+    margin-left: 6px;
+    margin-top: 6px;
+  }
+}

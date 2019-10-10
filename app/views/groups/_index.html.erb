@@ -4,15 +4,13 @@
 <div class="text-center d-flex justify-content-center">
   <div class="search search-group-index">
   <%= form_tag groups_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a group...",
-    class: "form-control string required"
-  %>
+    <%= text_field_tag :query,
+      params[:query],
+      placeholder: "Find a group...",
+      class: "inline-form-control string required" %>
+    <%= submit_tag "Search", class: " search-button-banner" %>
   <% end %>
-<%= submit_tag "Search", class: " search-button-banner" %>
-</div>
+  </div>
 </div>
 
 <% @groups.each do |group| %>

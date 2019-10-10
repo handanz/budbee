@@ -79,6 +79,7 @@ Why Japanese people tend to conceal their feelings? Marx thinks that human socie
 \n
 Ice cream sharing is an act of expressing one’s love to another, however this doesn’t meet the custom of the old history. Therefore, when the young girls grew up, they will follow the other, as the most people do, give up on the food sharing. Even they quit to express their feelings, I’m sure they still love the people they love."
 article.user = User.first
+article.tag_list = "social psychology, culture, japan, eating, tradition"
 article.save
 
     user_group = UserGroup.new
