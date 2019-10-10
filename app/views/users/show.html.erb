@@ -79,11 +79,13 @@
         </div>
       </div>
       <div class="profile-meetups col-sm-3">
-        <h3>Upcoming meetup</h3>
-        <% unless @meeting == nil %>
-
-        <div class="upcoming-meetup-schedule">
-          <div class="upcoming-meeting-month">
+        <div class="profile-meetups">
+          <% if @meeting == nil %>
+          <h4>There is no upcoming meetings</h4>
+          <% else %>
+          <h3>Upcoming meetup</h3>
+          <div class="upcoming-meetup-schedule">
+            <div class="upcoming-meeting-month">
             <h4><%= @meeting.time.strftime("%b") %></h4>
           </div>
           <div class="upcoming-meeting-time">
