@@ -11,21 +11,24 @@
   padding: 6px 12px;
   width: 60px;
   border-radius: 2px;
-  text-align: right;
+  text-align: center;
   float: right;
-  margin-right: 40px;
-  bottom: 45vh;
-  right: 0;
+  bottom: 57vh;
+  right: 40px;
   position: fixed;
-  :hover {
+  &:hover {
     text-decoration: none;
     background-color: darken($light-gray, 10%);
   }
+
 }
 
 
-a.link {
+a.back-link {
   color: white;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .btn {
