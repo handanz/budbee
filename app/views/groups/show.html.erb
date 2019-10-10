@@ -21,6 +21,7 @@
         <br>
         <br>
         <h4>Members</h4>
+        <%= pluralize(@group.limitation - @group.users.count, "spot") %> left
         <div class="d-flex flex-row mt-3">
           <% @group.users.each do |user| %>
             <%= link_to profile_path(user), class: "group-member-link" do %>
@@ -35,10 +36,10 @@
             <% end %>
           <% end %>
         <br>
+        </div>
       </div>
     </div>
-  </div>
-  <div>
+<div>
 <% if @future_meetings.count.positive? %>
   <%= simple_form_for(@user_meeting) do |f| %>
     <div class="dates">
