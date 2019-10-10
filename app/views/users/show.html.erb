@@ -99,12 +99,23 @@
             <br>
             <p><%= @meeting.description %></p>
           </div>
+
           <% end %>
         </div>
+        <br>
+        <% @meeting.user_meetings.each do |user_meeting| %>
+            <% if user_meeting.unconfirmed? %>
+              <div class="meeting_request">
+                <%= "#{user_meeting.user.first_name} wants to join" %>
+                <%= link_to "Confirm",confirm_user_meeting_path(user_meeting.id), method: :post %>
+              </div>
+            <% end %>
+          <% end %>
       </div>
 
     </div>
 
   </div>
 </div>
+
 
