@@ -46,10 +46,11 @@ users = User.create! [
     tag_list: "film, writing, literature"
   },
   { email: Faker::Internet.email,
-    password: "abcdefg",
+    password: "morning",
     username: "rosa19",
     first_name: "Rosa",
     last_name: "Falch",
+    image: "profile.png",
     tag_list: "architecture, art, painting"
   },
   { email: Faker::Internet.email,
@@ -184,15 +185,17 @@ users = User.create! [
   { email: Faker::Internet.email,
     password: "abcdefgp",
     username: Faker::Internet.username,
-    first_name: Faker::Name.first_name,
+    first_name: "Andy",
     last_name: Faker::Name.last_name,
+    image: "andreas.png",
     tag_list: "behaviour economics, art, psychology"
   },
   { email: Faker::Internet.email,
     password: "abcdefgp",
     username: Faker::Internet.username,
-    first_name: Faker::Name.first_name,
+    first_name: "Tulasi",
     last_name: Faker::Name.last_name,
+    image: "tulasi.jpg",
     tag_list: "behaviour economics, psychology"
   },
 
