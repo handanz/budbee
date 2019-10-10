@@ -1,4 +1,6 @@
 class UserMeeting < ApplicationRecord
+  validates :meeting, uniqueness: { scope: :user }
+
   belongs_to :user
   belongs_to :meeting
 
@@ -6,4 +8,3 @@ class UserMeeting < ApplicationRecord
     confirmed != true
   end
 end
- ##validates :meeting, uniqueness: { scope: :user }
