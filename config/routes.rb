@@ -22,7 +22,11 @@ Rails.application.routes.draw do
     resources :meetings, only: [ :show ]
   end
 
-  resources :user_meetings, only: :create
+  resources :user_meetings, only: :create  do
+    member do
+      post :confirm
+    end
+  end
   resources :articles, only: :show
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
