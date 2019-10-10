@@ -4,6 +4,7 @@ ruby '2.6.3'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'bootsnap', require: false
 gem 'devise'
+gem 'faker'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'pg_search', '~> 2.3.0'
