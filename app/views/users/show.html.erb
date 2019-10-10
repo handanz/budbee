@@ -99,8 +99,6 @@
             <br>
             <p><%= @meeting.description %></p>
           </div>
-
-          <% end %>
         </div>
         <br>
         <% @meeting.user_meetings.each do |user_meeting| %>
@@ -110,6 +108,7 @@
                 <%= link_to "Confirm",confirm_user_meeting_path(user_meeting.id), method: :post %>
               </div>
             <% end %>
+          <% end %>
           <% end %>
       </div>
 
