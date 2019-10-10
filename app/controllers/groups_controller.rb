@@ -2,18 +2,16 @@ class GroupsController < ApplicationController
   def index
     if params[:query].present?
       sql_query = " \
-      groups.name @@ :query \
-      OR groups.description @@ :query \
-      OR groups.city @@ :query \
+        groups.name @@ :query \
+        OR groups.description @@ :query \
+        OR groups.city @@ :query \
       "
       @groups = Group.where(sql_query, query: "%#{params[:query]}%")
-    elsif params[:tag]
-      @groups = Group.tagged_with(params[:tag])
+      params[:query].split.each do |query|
+        @groups |= Group.tagged_with(query)
+      end
     else
       @groups = Group.all
-    end
-    params[:query].split.each do |query|
-      @groups |= Group.tagged_with(query)
     end
   end
 
