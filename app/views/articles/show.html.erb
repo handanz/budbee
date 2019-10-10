@@ -15,7 +15,7 @@
           <%= link_to @user.first_name, profile_path(@user), class: "group-member-link" %>
           <% end %>
         </div>
-          Published:
+        Published:
         <div class="mt-2">
           <%= @article.created_at.strftime("%F") %>
         </div>
@@ -24,21 +24,23 @@
     <div class="col">
     </div>
     <div class="col-7">
+      <% @article.content.split(/\n/).each do |paragraph| %>
       <p>
-        <%= @article.content %>
-      </p>      
-      <br>
-      <br>
-      <p>Tags:</p>
-        <div class="tag ml-2">
-          <ul>
-      <% @tags.each do |tag| %>
-            <li ><%= tag %></li>
+       <%= paragraph %>
+     </p>
+     <% end %>
+     <br>
+     <br>
+     <p>Tags:</p>
+     <div class="tag ml-2">
+      <ul>
+        <% @tags.each do |tag| %>
+        <li ><%= tag %></li>
         <% end %>
-          </ul>
-        </div>
-    </div>
-    <div class="col">
+      </ul>
     </div>
   </div>
+  <div class="col">
+  </div>
+</div>
 </div>
