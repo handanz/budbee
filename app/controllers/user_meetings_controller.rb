@@ -9,7 +9,7 @@ class UserMeetingsController < ApplicationController
     if @user_meeting.save
       flash[:notice] = "Your request has been sent"
     else
-      flash[:alert] = "Request to join the meeting failed"
+      flash[:alert] = "You already have a pending request"
     end
     group = @user_meeting.meeting.group
     if group
