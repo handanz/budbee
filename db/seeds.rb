@@ -220,20 +220,6 @@ article.save
 puts "Creating groups"
 
 groups = Group.create! [
-  { name: "Psychology UiO",
-    description: "Social Psychology students from UiO. We study together for the exams, usually at the library.",
-    city: "Oslo",
-    limitation: "5",
-    image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
-    tag_list: "UiO, psychology, master's student"
-  },
-  { name: "Social Psychology with Nerds",
-    description: "Wanna join our nerdy group? Send us the nerdiest message you can think of!",
-    city: "Oslo",
-    limitation: "4",
-    tag_list: "social psychology, nerd, UiO",
-    image: "https://images.unsplash.com/photo-1556566229-5e8a0a2f048d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-  },
   { name: "Conquerors",
     description: "We are a group of chemistry students. We aim to conquer the world using the knowledge we learn outside of school. We do different experiments and have fun screwing up. LOL",
     city: "Oslo",
@@ -304,10 +290,21 @@ groups = Group.create! [
     tag_list: "wine, dining, food",
     image: "https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
   },
+  { name: "Psychology UiO",
+    description: "Social Psychology students from UiO. We study together for the exams, usually at the library.",
+    city: "Oslo",
+    limitation: "5",
+    image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+    tag_list: "UiO, psychology, master's student"
+  },
+  { name: "Social Psychology with Nerds",
+    description: "Wanna join our nerdy group? Send us the nerdiest message you can think of!",
+    city: "Oslo",
+    limitation: "4",
+    tag_list: "social psychology, nerd, UiO",
+    image: "https://images.unsplash.com/photo-1556566229-5e8a0a2f048d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+  },
 ]
-
-
-
 
 puts "Creating UserGroups"
 # each group:
@@ -320,11 +317,11 @@ line_group_count = 0
 
 # Add specific users to specific groups
 user_indexes_for_groups = {
-  0 => [0, 13, 20],
-  6 => [0, -1, -2]
+  -2 => [0, 13, 20],
+  4 => [0, -1, -2]
 }
 
-[0, 6].each do |group_index|
+[-2, 4].each do |group_index|
   user_indexes_for_group = user_indexes_for_groups[group_index]
   user_indexes_for_group.each do |user_index|
     user_group = UserGroup.new
@@ -353,8 +350,6 @@ Group.all.each do |group|
   end
 end
 
-
-
 # user_group1 = UserGroup.new(confirmed: true, user_id: User.first.id, group_id: Group.first.id)
 # user_group1.save
 # user_group2 = UserGroup.new(confirmed: true, user_id: User.first.id, group_id: Group.all[6].id)
@@ -362,22 +357,20 @@ end
 
 puts "Creating meetings"
 
-
 meeting1 = Meeting.new
 meeting1.title = "UiO psychology Monday meetup"
 meeting1.description = "This meeting is for students who want to know more about our group. We are meeting on Monday to discuss our goals for this semester. PS. We are ambitious students who aim to get great grades this semester."
 meeting1.time = "2019-10-14 17:00:00"
 meeting1.address = "Chr. Krohgs Gate 1, Oslo"
-meeting1.group = Group.all[6]
+meeting1.group = Group.all[4]
 meeting1.save
-
 
 meeting2 = Meeting.new
 meeting2.title = "Meetup for study groups"
 meeting2.description = "This meeting is for people who want to share their interests and to know more about others"
 meeting2.time = "2019-10-28 17:00:00"
 meeting2.address = "Chr. Krohgs Gate 1, Oslo"
-meeting2.group = Group.all[6]
+meeting2.group = Group.all[4]
 meeting2.save
 
 user_meeting = UserMeeting.new
@@ -399,7 +392,5 @@ user_meeting_b = UserMeeting.new
 user_meeting_b.user = User.all[4]
 user_meeting_b.meeting = Meeting.all[6]
 user_meeting_b.save
-
-
 
 p "Users and Meetings created"
