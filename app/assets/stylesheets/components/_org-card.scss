@@ -3,8 +3,9 @@
   overflow: hidden;
   background: white;
   // box-shadow: 0 0 8px rgba(0,0,0,0.2);
-  width: 33%;
-  margin: 15px,
+  width: 43%;
+  margin: none;
+  // margin: 15px;
 }
 
 .org-card .group-public-tag {
@@ -16,7 +17,7 @@
   padding: 4px 6px;
 }
 
-.org-card > img {
+.org-card img {
   height: 33%;
   width: 100%;
   object-fit: cover;

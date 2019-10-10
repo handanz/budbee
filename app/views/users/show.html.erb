@@ -1,90 +1,111 @@
 <div class="container-fluid">
   <div class="flex-profile-container">
     <div class="row">
-    <div class="col-sm-2 px-1 bg-">
-      <div class="py-2 sticky-top flex-grow-1">
-        <div class="nav flex-sm-column text-center">
-          <%= image_tag (@user.image), class: "profile-avatar mask my-3" %>
-          <h3><%= @user.first_name %></h3>
-          <br>
-          <% @interests.each do |interest| %>
-            <%= interest %>
-            <% unless interest == @interests.last %>
-              |
-            <% end %>
-          <% end %>
-          <br>
-
-        <div id="following-container">
-        <!-- render partial: following. shows 'follow'/'unfollow' -->
-        <%= render 'following', user: @user, following_count: @following_count, follower_count: @follower_count %>
-
-        </div>
-
-          <div class="mt-5">
-            <p><%= @user.first_name %>' recent articles:</p>
-            <% @articles.each do |article| %>
+      <div class="col-sm-3 px-1">
+        <div class="py-2 sticky-top flex-grow-1 px-3 py-2">
+          <div class="nav flex-sm-column text-center sidebar">
+            <%= image_tag (@user.image), class: "profile-avatar mask my-3" %>
+            <h3><%= @user.first_name %></h3>
+            <br>
+            <div id="following-container">
+              <!-- render partial: following. shows 'follow'/'unfollow' -->
+              <%= render 'following', user: @user, following_count: @following_count, follower_count: @follower_count %>
+            </div>
+            <div class="mt-3">
+              <p><%= @user.first_name %>' recent articles:</p>
+              <% if @articles.empty? %>
+              <% if current_user == @user %>
+              Add an article to your page.
+              <% else %>
+              <%= @user.first_name + " hasn't written anything yet. So lazy!" %>
+              <% end %>
+              <% end %>
+              <% @articles.each do |article| %>
               <%= link_to article_path(article), class: "group-card-link" do %>
               <div class="group-member-link">
                 <%= article.title %>
+              </div>
+              <% end %>
+              <% end %>
+            </div>
+            <br>
+            <div class="container">
+              <div class="tags">
+
+                <% @interests.each do |interest| %>
+                <div class="indie-tag">
+                  <%= interest %>
+                </div>
+                <% end %>
+              </div>
+            </div>
+            <br>
+
+          </div>
+        </div>
+        <!-- <div class="vr">&nbsp;</div> -->
+      </div>
+      <div class="col-sm-6">
+        <!-- flex-profile-container -->
+        <div class="profile-groups">
+          <div class="ml-4">
+          <% if current_user == @user %>
+          <h3>Groups I am in</h3>
+          <% else %>
+          <h3>Groups <%= @user.first_name %> is in</h3>
+          <% end %>
+          </div>
+          <div class="flex-group-container">
+            <% @groups.each do |group| %>
+              <div class="org-card">
+              <%= link_to group_path(group), class: "group-card-link" do %>
+                <%= image_tag (group.image) %>
+                <div class="group-public-tag">Public</div>
+                <div class="org-card-infos group-member-link">
+                  <div class="info-left">
+                    <p><strong><%= group.name %>
+                    </strong></p>
+                    <!-- <p text-right><%= group.city %></p> -->
+                  </div>
+                  <br>
+                  <div class="info-right flex-grow-1 w-100">
+                    <p><%= group.description %></p>
+                  </div>
                 </div>
               <% end %>
+              </div>
             <% end %>
           </div>
         </div>
       </div>
-    </div>
-    <div class="vr">&nbsp;</div>
-
-    <div class="col" id="main">
-      <div class="flex-profile-container">
-        <div class="profile-groups">
-          <h3>Groups <%= @user.first_name %> is in</h3>
-          <div class="flex-group-container">
-            <% @groups.each do |group| %>
-            <div class="org-card">
-              <%= image_tag (group.image) %>
-              <div class="group-public-tag">Public</div>
-              <div class="org-card-infos">
-                <div class="info-left">
-                  <p><strong><%= group.name %></strong></p>
-                  <p><strong><%= group.city %></strong></p>
-                </div>
-                <div class="info-right flex-grow-1 w-100">
-                  <p><%= group.description %></p>
-                </div>
-              </div>
-            </div>
-            <% end %>
-          </div>
-        </div>
-
+      <div class="profile-meetups col-sm-3">
         <div class="profile-meetups">
           <% if @meeting == nil %>
           <h4>There is no upcoming meetings</h4>
           <% else %>
           <h3>Upcoming meetup</h3>
-
           <div class="upcoming-meetup-schedule">
             <div class="upcoming-meeting-month">
             <h4><%= @meeting.time.strftime("%b") %></h4>
-            </div>
-            <div class="upcoming-meeting-time">
-            <h3><%= @meeting.time.day %></h3>
-            </div>
           </div>
-          <% end %>
-          <div class="flex-upcoming-container">
-            <% if @meeting %>
-              <div class="upc-card">
-                <p><strong><%= @meeting.title %></strong></p>
-                <p><strong><%= @meeting.time %></strong></p>
-                <p><%= @meeting.description %></p>
-              </div>
-            <% end %>
+          <div class="upcoming-meeting-time">
+            <h3><%= @meeting.time.day %></h3>
           </div>
         </div>
+        <% end %>
+        <div class="flex-upcoming-container">
+          <% if @meeting %>
+          <div class="upc-card">
+            <p><strong><%= @meeting.title %></strong></p>
+            <br>
+            <p><%= @meeting.description %></p>
+          </div>
+          <% end %>
+        </div>
       </div>
+
     </div>
+
   </div>
 </div>
+
