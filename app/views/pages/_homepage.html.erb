@@ -1,22 +1,24 @@
 <% content_for :navbar do %>
-  <%= render "shared/navbar_without_search" %>
+<%= render "shared/navbar_without_search" %>
 <% end %>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)">
-  <div>
-    <h1><strong> Brighter Friends, Brighter Future.</strong></h1>
-    <div class="text-center d-flex justify-content-center">
-      <div class="search search-banner">
-        <%= form_tag groups_path, method: :get do %>
+<div class="home-video-wrapper">
+  <%= video_tag "https://res.cloudinary.com/immahelen/video/upload/v1570722763/el5nz3tdwybswfstisfv.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home-video", preload: :metadata, poster: "home_video_poster.png", poster_skip_pipeline: true %>
+  <div class="banner">
+    <div>
+      <h1><strong> Brighter Friends, Brighter Future.</strong></h1>
+      <div class="text-center d-flex justify-content-center">
+        <div class="search search-banner">
+          <%= form_tag groups_path, method: :get do %>
           <%= text_field_tag :query,
-            params[:query],
-            placeholder: "Find a group...",
-            class: "inline-form-control string required"
-          %>
-          <%= submit_tag "Search", class: " search-button-banner" %>
-        <% end %>
+          params[:query],
+          placeholder: "Find a group...",
+          class: "inline-form-control string required"
+            %>
+            <%= submit_tag "Search", class: " search-button-banner" %>
+            <% end %>
+        </div>
       </div>
-
     </div>
   </div>
 </div>
