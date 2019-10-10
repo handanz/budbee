@@ -8,15 +8,25 @@
         <div>
           <%= image_tag (@user.image), class: "profile-avatar mask my-3" %>
         </div>
-        <div class="my-3">
-          <%= link_to(@user.first_name, profile_path(@user)) %>
+        <div class="my-3 group-card-link">
+          <% if current_user == @user %>
+          <%= link_to "Me", profile_path(@user), class: "group-member-link" %>
+          <% else %>
+          <%= link_to @user.first_name, profile_path(@user), class: "group-member-link" %>
+          <% end %>
+        </div>
+          Published:
+        <div class="mt-2">
+          <%= @article.created_at.strftime("%F") %>
         </div>
       </div>
     </div>
     <div class="col">
     </div>
     <div class="col-7">
-      <%= @article.content %>
+      <p>
+        <%= @article.content %>
+      </p>      
       <br>
       <br>
       <p>Tags:</p>
