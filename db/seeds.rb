@@ -248,19 +248,19 @@ groups = Group.create! [
     tag_list: "physics, parks, uio",
     image: "https://images.unsplash.com/photo-1453733190371-0a9bedd82893?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80"
   },
-  { name: "Social Psychology with Hot Chocolate",
-    description: "A bunch of cool kids who are really into the cultural aspect of social psychology. We usually experiment with different hot chocolates during our meet ups. If you like hot chocolate and social pshycology you should join us! You won't regret it!",
-    city: "Oslo",
-    limitation: "4",
-    tag_list: "social psychology, hot chocolate, culture",
-    image: "https://images.unsplash.com/photo-1538993742171-0de4a25d1a3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-  },
   { name: "Russian Literature",
     description: "It started with Wednesday talks on literature with Line and Jonasow. Now we are three people who meet regularly to discuss different literature topics. We usually read a book before every meeting and talk about it from a bunch of different perspectives.",
     city: "Bergen",
     limitation: "4",
     tag_list: "literature, russia, reading",
     image: "https://images.unsplash.com/photo-1504615458222-979e04d69a27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=755&q=80"
+  },
+  { name: "Social Psychology with Hot Chocolate",
+    description: "A bunch of cool kids who are really into the cultural aspect of social psychology. We usually experiment with different hot chocolates during our meet ups. If you like hot chocolate and social pshycology you should join us! You won't regret it!",
+    city: "Oslo",
+    limitation: "4",
+    tag_list: "social psychology, hot chocolate, culture",
+    image: "https://images.unsplash.com/photo-1538993742171-0de4a25d1a3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
   },
   { name: "Psyche!",
     description: "Psyche! We chat about a variety of topics in psychology. What is your favourite topic? Sports psychology, social psychology, behaviour pshycology or not so ethical psychological experiments during 1900... Come and try our group if you share our interest!",
@@ -318,10 +318,10 @@ line_group_count = 0
 # Add specific users to specific groups
 user_indexes_for_groups = {
   -2 => [0, 13, 20],
-  4 => [0, -1, -2]
+  5 => [0, -1, -2]
 }
 
-[-2, 4].each do |group_index|
+[-2, 5].each do |group_index|
   user_indexes_for_group = user_indexes_for_groups[group_index]
   user_indexes_for_group.each do |user_index|
     user_group = UserGroup.new
@@ -362,7 +362,7 @@ meeting1.title = "UiO psychology Monday meetup"
 meeting1.description = "This meeting is for students who want to know more about our group. We are meeting on Monday to discuss our goals for this semester. PS. We are ambitious students who aim to get great grades this semester."
 meeting1.time = "2019-10-14 17:00:00"
 meeting1.address = "Chr. Krohgs Gate 1, Oslo"
-meeting1.group = Group.all[4]
+meeting1.group = Group.all[5]
 meeting1.save
 
 meeting2 = Meeting.new
@@ -370,16 +370,18 @@ meeting2.title = "Meetup for study groups"
 meeting2.description = "This meeting is for people who want to share their interests and to know more about others"
 meeting2.time = "2019-10-28 17:00:00"
 meeting2.address = "Chr. Krohgs Gate 1, Oslo"
-meeting2.group = Group.all[4]
+meeting2.group = Group.all[5]
 meeting2.save
 
 user_meeting = UserMeeting.new
 user_meeting.user = User.first
+user_meeting.confirmed = true
 user_meeting.meeting = Meeting.first
 user_meeting.save
 
 user_meeting1 = UserMeeting.new
 user_meeting1.user = User.all[1]
+user_meeting1.confirmed = true
 user_meeting1.meeting = Meeting.first
 user_meeting1.save
 

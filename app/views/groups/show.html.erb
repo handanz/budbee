@@ -46,7 +46,7 @@
       <div class="form-inputs">
         <div class="form-row">
           <div id="meeting-dates" data-meeting-dates="<%= @dates %>"></div>
-          <%= f.input :meeting, as: :string, input_html: { class: "datepicker" }, label: 'Want to join an upcoming meeting?', collection: @group.meetings, wrapper_html: { class: "inline_field_wrapper" } %>
+          <%= f.input :meeting, as: :string, input_html: { class: "datepicker" }, label: 'Want to join an upcoming get-together?', collection: @group.meetings, wrapper_html: { class: "inline_field_wrapper" } %>
           <%= f.input :group_id, as: :hidden, input_html: { value: @group.id } %>
           <%#= f.input :time, as: :string, input_html: { class: "datepicker" }, label: "Dates from", placeholder: "yy/mm/dd", wrapper_html: { class: "inline_field_wrapper" } %>
         </div>
