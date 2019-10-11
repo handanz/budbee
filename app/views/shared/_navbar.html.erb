@@ -11,6 +11,7 @@
         <%= text_field_tag :query,
           params[:query],
           placeholder: "find a group",
+          autocomplete: 'off',
           class: "inline-form-control string required"
         %>
         <%= submit_tag "Search", class: " search-button-navbar" %>
