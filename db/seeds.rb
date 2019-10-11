@@ -383,14 +383,14 @@ user_meeting1.user = User.all[1]
 user_meeting1.meeting = Meeting.first
 user_meeting1.save
 
-user_meeting_a = UserMeeting.new
-user_meeting_a.user = User.first
-user_meeting_a.meeting = Meeting.all[6]
-user_meeting_a.save
+# user_meeting_a = UserMeeting.new
+# user_meeting_a.user = User.first
+# user_meeting_a.meeting = Meeting.all[6]
+# user_meeting_a.save
 
-user_meeting_b = UserMeeting.new
-user_meeting_b.user = User.all[4]
-user_meeting_b.meeting = Meeting.all[6]
-user_meeting_b.save
+# user_meeting_b = UserMeeting.new
+# user_meeting_b.user = User.all[4]
+# user_meeting_b.meeting = Meeting.all[6]
+# user_meeting_b.save
 
 p "Users and Meetings created"
