@@ -55,7 +55,7 @@
   margin-bottom: 28px;
   overflow: hidden;
   height: 140px;
-  width: 850px;
+  width: 900px;
   background: white;
   // box-shadow: 0 0 5px rgba(0,0,0,0.1);
   display: flex;
@@ -72,7 +72,7 @@
 
 .card-product img {
   height: 100%;
-  width: 140px;
+  width: 180px;
   object-fit: cover;
 }
 
@@ -91,7 +91,7 @@
 }
 
 .card-product .card-product-infos {
-  padding: 12px 14px;
+  padding: 16px 16px;
   border-width: 1px;
   width: 100%;
 }
