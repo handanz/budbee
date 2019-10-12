@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   # get "/profile/:id", to: 'users#show', as: 'profile'
   devise_for :users
   root to: 'pages#home'
@@ -27,6 +26,6 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
-  resources :articles, only: :show
+  resources :articles, only: %i[show new create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
