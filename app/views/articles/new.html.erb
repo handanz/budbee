@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="col-lg-10 justify-content-center">
+    <h2>Add a new article</h2>
+
+    <%= simple_form_for(@article) do |f| %>
+    <%= f.input :title %>
+    <div class="text-input-box">
+      <%= f.input :content, input_html: {rows: 18} %>
+    </div>
+    <%#= f.input :image %>
+    <%#= f.input :image_cache, as: :hidden %>
+    <%= f.submit %>
+    <% end %>
+  </div>
+</div>
